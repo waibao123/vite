@@ -1,16 +1,116 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <title>@ViewBag.Title</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    @Styles.Render("~/Content/css/app.css")
+
+</head>
+
+
+@*<!DOCTYPE html>
+<html>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
+</head>*@
+
+
 <body>
     @RenderBody()
-
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
     @RenderSection("scripts", required: false)
+
+    <footer class="container-footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-2 center-block help-list">
+                    <h4>帮助中心</h4>
+                    <div class="line-divider"></div>
+                    <p><a href="javascript:void(0);">最新动态</a></p>
+                    <p><a href="javascript:void(0);">企业认证</a></p>
+                    <p><a href="javascript:void(0);">企业服务</a></p>
+                </div>
+                <div class="col-sm-2 center-block help-list">
+                    <h4>产品与服务</h4>
+                    <div class="line-divider"></div>
+                    <p><a href="javascript:void(0);">找产品</a></p>
+                    <p><a href="javascript:void(0);">找服务</a></p>
+                    <p><a href="javascript:void(0);">找销售</a></p>
+                </div>
+                <div class="col-sm-2 center-block help-list">
+                    <h4>我们的品牌</h4>
+                    <div class="line-divider"></div>
+                    <p><a href="javascript:void(0);">澳乐维他</a></p>
+                    <p><a href="javascript:void(0);">艾缇莎</a></p>
+                    <p><a href="javascript:void(0);">澳乐乳</a></p>
+                </div>
+                <div class="col-sm-6 center-block text-center share-btn">
+
+                    <div class="row">
+
+                        <div class="col-sm-6 center-block text-right">
+
+                            <div class="qr-pic">
+                                <div class="weixin-logo"></div>
+                                <div class="qr-pic-inner">
+                                    <img class="ercode-pic-weixin" src="images/ercode-weixin.png" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6 center-block text-left">
+
+                            <div class="qr-pic">
+                                <div class="weibo-logo"></div>
+                                <div class="qr-pic-inner">
+                                    <img class="ercode-pic-weibo" src="images/ercode-weixin.png" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

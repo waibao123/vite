@@ -1,7 +1,121 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "澳乐维他官网";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/default.css")
 }
 
-<h2>Index</h2>
-@ViewBag.CCC
+<div class="container">
+
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+
+            <div class="navbar-header brand-name">
+                <img class="img-responsive" src="./images/top-logo.jpg" />
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">产品展示</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">膳食补充剂</a></li>
+                            <li><a href="#">营养保健品</a></li>
+                            <li><a href="#">澳洲奶粉</a></li>
+                            <li><i class="up-caret"></i></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实力优势</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">企业介绍</a></li>
+                            <li><a href="#">团队介绍</a></li>
+                            <li><a href="#">生产监控</a></li>
+                            <li><i class="up-caret"></i></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">联系我们</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">招商代理</a></li>
+                            <li><a href="#">人才招聘</a></li>
+                            <li><a href="#">联系方式</a></li>
+                            <li><i class="up-caret"></i></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container-bg img-responsive">
+
+    <div class="masthead-top">
+
+        <div class="container">
+
+            <div class="row text-center">
+                <img src="images/our-logo.png">
+            </div>
+
+            <div class="row brand-list">
+                <div class="col-sm-4 center-block text-center">
+                    <a href="/">
+                        <img src="images/brand-pill.png">
+                    </a>
+                </div>
+                <div class="col-sm-4 center-block text-center">
+                    <a href="/">
+                        <img src="images/brand-main.png">
+                    </a>
+                </div>
+                <div class="col-sm-4 center-block text-center">
+                    <a href="/">
+                        <img src="images/brand-milk.png">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+<div class="container-map-bg img-responsive">
+
+    <div class="masthead">
+
+        <div class="search-outer">
+
+            <div class="row text-center">
+
+                <form class="search-wrapper">
+                    <input type="text" class="form-control" placeholder="请输入您要搜索的商品">
+                    <div class="search-btn"></div>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="passage-outer">
+            <p class="text-wrapper index-passage">澳乐维他（上海）健康科技有限公司是澳大利亚独资的进出口贸易和品牌销售公司，目前的主营业务是进口澳大利亚“Health Spring （Australia）Pty Ltd”旗下的三大品牌Enervite，NTSA和OZ Good Dairy产品到大中华区，并进行推广和销售。</p>
+            <p class="text-wrapper">EnerVite（澳乐维他）品牌1983年成立于澳大利亚的悉尼，是澳洲草本植物类营养食品的开创者。EnerVite一直秉承“Spring into Health”的承诺，提供一系列天然草本植物、海洋生物、蜂产品、维生素和矿物质类营养食品。</p>
+            <p class="text-wrapper">OZ Good Dairy（澳乐乳奶粉）品牌专注于牛奶粉和羊奶粉的研发及生产。全部鲜牛奶和鲜羊奶来自澳洲Gippsland Farm牧场，该牧场坐落于南北纬37度，是世界三大“黄金牧场” 之一。</p>
+            <p class="text-wrapper">NTSA（艾缇莎）品牌专注于自然科学疗法，以澳洲顶尖的生物技术为后盾，不仅提供日常的健康护理，还注重于新陈代谢、身体运动机能、关节保护、生殖健康、肠道调理、健康瘦身等产品的研发生产，为全球人类提供优质的健康生活品质。</p>
+            <p class="text-wrapper">品质与功效成就了Enervite和OZ Good Dairy，也即将成就澳乐维他（上海）健康科技有限公司。</p>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+@*@ViewBag.CCC*@

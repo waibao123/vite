@@ -1,0 +1,337 @@
+* {
+    font-family: \5FAE\8F6F\96C5\9ED1, Arial, Helvetica, sans-serif;
+}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+p,ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+ul,menu {list-style: none;}
+
+body a {
+    text-decoration: none;
+    color: #000;
+    outline: none;
+}
+
+
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px dashed;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+
+.dropdown-menu-wrapper{
+    display: none;
+    padding-top: 10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    opacity: 1;
+}
+
+
+
+.dropdown-menu>li>a:hover {
+    color: #262626;
+    background-color: #f5f5f5;
+}
+
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 10px 20px;
+    clear: both;
+    /*color: #3eca36;*/
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+.main-head-title {
+    position: relative;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.main-head-title:hover>.dropdown-menu-wrapper {
+    display: block;
+}
+
+
+.main-head-title:hover>a{
+    /*color: #3eca36;*/
+}
+
+
+
+
+
+
+
+
+
+footer {
+    clear: both;
+    margin-top: 50px;
+}
+
+footer .footer-container-outer{
+    background: #3eca36;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 12px;
+    line-height: 28px;
+}
+
+footer .footer-container-inner{
+    padding-right: 130px;
+    padding-left: 130px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.subnav ul,
+.nav ul{
+    margin: 15px 0;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+
+footer a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+.dropdown-menu{
+    min-width: 125px;
+    text-align: center;
+    border-top: 2px solid #75bb29;
+}
+
+.dropdown-menu>li>a{
+    color: #999;
+    padding: 3px 0;
+}
+
+.dropdown.open .dropdown-toggle{
+    color: #75bb29;
+}
+
+.dropdown-menu>li{
+    padding: 0 20px;
+}
+
+.dropdown-menu>li>a:hover{
+    color: #FFFFFF;
+    background:#75bb29;
+    padding: 3px 0;
+}
+
+
+.up-caret {
+    position: absolute;
+    color: #75bb29;
+    z-index: 9999;
+    top: -6px;
+    right: 45%;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 6px dashed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-footer{
+    background: #e9e9e9;
+}
+
+.line-divider{
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #999;
+}
+
+.help-list{
+    color: #999999;
+    padding: 70px 60px 75px 0;
+}
+
+.help-list a{
+    text-decoration: none;
+    color: #999999;
+}
+
+.ercode-pic-weixin{
+    position: absolute;
+    top: -173px;
+    left: 54%;
+}
+
+.ercode-pic-weibo{
+    position: absolute;
+    top: -173px;
+    left: -15%;
+}
+
+.share-btn{
+    padding: 150px 0 0 0;
+}
+
+.qr-pic-inner{
+    display: none;
+}
+
+.qr-pic:hover .qr-pic-inner{
+    display: block;
+}
+
+.weixin-logo{
+    float: right;
+    display: block;
+    width: 64px;
+    height: 52px;
+    background: url("../images/weixin-logo-shadow.png");
+}
+
+.weibo-logo{
+    float: left;
+    display: block;
+    width: 66px;
+    height: 56px;
+    background: url("../images/weibo-icon-shadow.png");
+}
+
+.qr-pic:hover .weixin-logo{
+    background: url("../images/weixin-logo.png");
+}
+
+.qr-pic:hover .weibo-logo{
+    background: url("../images/weibo-icon-shadow.png");
+}
+
+li.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.navbar{
+    margin-bottom: 0;
+}
+
+.navbar-nav>li>a {
+    line-height: 32px;
+    color: #999999;
+}
+
+.navbar-nav>li{
+    width: 125px;
+    text-align: center;
+}
+
+.brand-name{
+    width: 450px;
+    line-height: 450px;
+}
+
+.brand-name img{
+    max-height: 62px;
+}
+
+.mt30{
+    margin-top: 30px;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+.mb50{
+    margin-bottom: 50px;
+}
