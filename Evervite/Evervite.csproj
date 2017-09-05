@@ -142,6 +142,13 @@
   <ItemGroup>
     <Content Include="Content\css\app.css" />
     <Content Include="Content\css\default.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
+    <Content Include="Content\css\productDetail.css" />
+    <Content Include="Content\css\productList.css" />
+    <Content Include="Content\js\productDetail.js" />
+    <Content Include="Content\js\mainSite.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -255,6 +262,18 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Index\MainSite.cshtml" />
+    <Content Include="Views\Shared\MainSiteLayout.cshtml" />
+    <Content Include="Views\Shared\MainMilkSiteLayout.cshtml" />
+    <Content Include="Views\Index\MainMilkSite.cshtml" />
+    <Content Include="Views\Shared\MainHealthSiteLayout.cshtml" />
+    <Content Include="Views\Index\MainHealthSite.cshtml" />
+    <Content Include="Views\Index\ProductList.cshtml" />
+    <Content Include="Views\Index\ProductMilkList.cshtml" />
+    <Content Include="Views\Index\ProductHealthList.cshtml" />
+    <Content Include="Views\Index\productDetail.cshtml" />
+    <Content Include="Views\Index\productMilkDetail.cshtml" />
+    <Content Include="Views\Index\productHealthDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

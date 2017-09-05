@@ -19,5 +19,50 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult MainSite()
+        {
+            return View();
+        }
+
+        public ActionResult ProductList()
+        {
+            return View();
+        }
+
+        public ActionResult ProductMilkList()
+        {
+            return View();
+        }
+
+        public ActionResult ProductHealthList()
+        {
+            return View();
+        }
+
+        public ActionResult ProductDetail()
+        {
+            return View();
+        }
+
+        public ActionResult ProductMilkDetail()
+        {
+            return View();
+        }
+
+        public ActionResult ProductHealthDetail()
+        {
+            return View();
+        }
+
+        public ActionResult MainMilkSite()
+        {
+            return View();
+        }
+
+        public ActionResult MainHealthSite()
+        {
+            return View();
+        }
+
     }
 }
