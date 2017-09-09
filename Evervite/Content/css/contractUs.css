@@ -1,0 +1,58 @@
+
+
+.contract-us-wrapper{
+    position: relative;
+    margin-top: 60px;
+}
+
+.contract-us-wrapper h3 {
+    color: #1eb9eb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    line-height: 60px;
+}
+
+.contract-us-wrapper h3:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -95px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 80px;
+    height: 1px;
+    background: #1eb9eb;
+}
+
+
+.contract-us-wrapper h3:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -95px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 80px;
+    height: 1px;
+    background: #1eb9eb;
+}
+
+.form-wrapper{
+    max-width: 580px;
+    padding-top: 55px
+}
+
+.content-inner{
+    position: relative;
+}
+
+
+.submit-btn-wrapper .btn-default{
+    background: #75bb29;
+    color: #FFFFFF;
+    min-width: 192px;
+    min-height: 27px;
+}

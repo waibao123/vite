@@ -64,5 +64,15 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult ContractUs()
+        {
+            return View();
+        }
+
+        public ActionResult BrandStory()
+        {
+            return View();
+        }
+
     }
 }

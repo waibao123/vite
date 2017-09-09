@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "澳乐维他";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/contractUs.css");
+}
+
+<div class="container">
+
+    <div class="contract-us-wrapper">
+        <h3 class="text-center">联系我们</h3>
+    </div>
+
+    <div class="content-inner">
+        <div class="form-wrapper center-block">
+            <form>
+
+                <div class="form-group">
+                    <label for="inputTheme">主题</label>
+                    <input type="text" class="form-control" id="inputTheme" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="inputTheme">姓名</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="inputTheme">邮箱</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputContent">正文</label>
+                    <textarea class="form-control" id="inputContent" rows="6"></textarea>
+                </div>
+
+                <div class="text-center submit-btn-wrapper">
+                    <button type="submit" class="btn btn-default">立即发送</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
