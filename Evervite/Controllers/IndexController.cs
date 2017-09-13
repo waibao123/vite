@@ -74,5 +74,10 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult HelpCenter()
+        {
+            return View();
+        }
+
     }
 }

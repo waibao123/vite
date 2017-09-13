@@ -145,6 +145,7 @@
     <Content Include="Content\css\brandStory.css" />
     <Content Include="Content\css\contractUs.css" />
     <Content Include="Content\css\default.css" />
+    <Content Include="Content\css\helpCenter.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Index\ContractUs.cshtml" />
     <Content Include="Views\Index\BrandStory.cshtml" />
+    <Content Include="Views\Index\HelpCenter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
