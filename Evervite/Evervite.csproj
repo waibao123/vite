@@ -283,6 +283,9 @@
     <Content Include="Views\Index\ContractUs.cshtml" />
     <Content Include="Views\Index\BrandStory.cshtml" />
     <Content Include="Views\Index\HelpCenter.cshtml" />
+    <Content Include="Views\Index\Footer.cshtml" />
+    <Content Include="Views\Index\MainHeader.cshtml" />
+    <Content Include="Views\Index\MainBrandHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

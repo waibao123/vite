@@ -79,5 +79,21 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult Footer()
+        {
+            return PartialView();
+        }
+
+
+        public ActionResult MainHeader()
+        {
+            return PartialView();
+        }
+
+        public ActionResult MainBrandHeader()
+        {
+            return PartialView();
+        }
+
     }
 }

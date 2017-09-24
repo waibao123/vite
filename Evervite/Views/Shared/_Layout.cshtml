@@ -33,133 +33,13 @@
 
 <body>
 
-    <div class="navbar navbar-default">
-        <div class="container">
-            <div class="nav-logo">
-                <a class="" href="#">
-                    <img class="img-responsive" src="../images/top-logo.jpg" style="height: 100%;width: auto;" />
-                </a>
-            </div>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse navbar-right" id="navBar">
-                <ul class="nav navbar-nav">
-
-                    <li>
-                        <a href="#" class="dropdown-toggle">
-                            首页
-                        </a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            产品展示
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">膳食补充剂</a></li>
-                            <li><a href="#">营养保健品</a></li>
-                            <li><a href="#">澳洲奶粉</a></li>
-                            <li><i class="up-caret"></i></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            实力优势
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">企业介绍</a></li>
-                            <li><a href="#">团队介绍</a></li>
-                            <li><a href="#">生产监控</a></li>
-                            <li><i class="up-caret"></i></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            联系我们
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">招商代理</a></li>
-                            <li><a href="#">人才招聘</a></li>
-                            <li><a href="#">联系方式</a></li>
-                            <li><i class="up-caret"></i></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @Html.Action("MainHeader", "Index")
 
     @RenderBody()
+    
+    @Html.Action("Footer", "Index")
+
     @RenderSection("scripts", required: false)
-
-    <footer class="container-footer">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-sm-2 center-block help-list">
-                    <h4>帮助中心</h4>
-                    <div class="line-divider"></div>
-                    <p><a href="javascript:void(0);">最新动态</a></p>
-                    <p><a href="javascript:void(0);">企业认证</a></p>
-                    <p><a href="javascript:void(0);">企业服务</a></p>
-                </div>
-                <div class="col-sm-2 center-block help-list">
-                    <h4>产品与服务</h4>
-                    <div class="line-divider"></div>
-                    <p><a href="javascript:void(0);">找产品</a></p>
-                    <p><a href="javascript:void(0);">找服务</a></p>
-                    <p><a href="javascript:void(0);">找销售</a></p>
-                </div>
-                <div class="col-sm-2 center-block help-list">
-                    <h4>我们的品牌</h4>
-                    <div class="line-divider"></div>
-                    <p><a href="javascript:void(0);">澳乐维他</a></p>
-                    <p><a href="javascript:void(0);">艾缇莎</a></p>
-                    <p><a href="javascript:void(0);">澳乐乳</a></p>
-                </div>
-                <div class="col-sm-6 center-block text-center share-btn">
-
-                    <div class="row">
-
-                        <div class="col-sm-6 center-block text-right">
-
-                            <div class="qr-pic">
-                                <div class="weixin-logo"></div>
-                                <div class="qr-pic-inner">
-                                    <img class="ercode-pic-weixin" src="images/ercode-weixin.png" />
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-sm-6 center-block text-left">
-
-                            <div class="qr-pic">
-                                <div class="weibo-logo"></div>
-                                <div class="qr-pic-inner">
-                                    <img class="ercode-pic-weibo" src="images/ercode-weixin.png" />
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </footer>
 
 </body>
 </html>

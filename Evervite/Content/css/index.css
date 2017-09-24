@@ -1,42 +1,36 @@
-
-
-
-
-
-.brand-list{
+.brand-list {
     margin-top: 32px;
 }
 
-.brand-list img{
+.brand-list img {
     max-width: 240px;
     padding: 7px;
-
 }
 
-    .brand-list img:hover {
-        background: url(../../images/brand-bg.png);
-        background-size: 100% 100%;
-        padding: 7px;
-    }
+.brand-list img:hover {
+    background: url(../images/brand-bg.png);
+    background-size: 100% 100%;
+    padding: 7px;
+}
 
 
-li.dropdown:hover .dropdown-menu{
+li.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.carousel-inner img{
+.carousel-inner img {
     width: 100%;
 }
 
-.carousel-indicators li{
+.carousel-indicators li {
     background: #869791;
 }
 
-.carousel-indicators li.active{
+.carousel-indicators li.active {
     background: #000;
 }
 
-.inner-content{
+.inner-content {
     padding: 100px 0 0 0;
 }
 
@@ -48,7 +42,7 @@ li.dropdown:hover .dropdown-menu{
     margin-left: auto;
 }
 
-.search-wrapper{
+.search-wrapper {
     position: relative;
 }
 
@@ -56,7 +50,7 @@ li.dropdown:hover .dropdown-menu{
     position: absolute;
     top: 5px;
     right: 10px;
-    background: url(../../images/search-icon.png);
+    background: url(../images/search-icon.png);
     background-size: 100% 100%;
     width: 23px;
     height: 23px;
@@ -67,7 +61,7 @@ li.dropdown:hover .dropdown-menu{
 
 
 
-.product-category-wrapper{
+.product-category-wrapper {
     position: relative;
     margin-top: 40px;
     padding-right: 15px;
@@ -76,7 +70,7 @@ li.dropdown:hover .dropdown-menu{
     margin-left: auto;
 }
 
-.product-category-wrapper h3{
+.product-category-wrapper h3 {
     color: #1eb9eb;
     position: absolute;
     top: 50%;
@@ -114,36 +108,36 @@ li.dropdown:hover .dropdown-menu{
 
 
 
-.shortcut-button-list{
+.shortcut-button-list {
     margin-top: 100px;
 }
 
-.shortcut-button-list li{
+.shortcut-button-list li {
     display: inline;
     margin-left: 20px;
 }
 
-.shortcut-button-list .btn{
+.shortcut-button-list .btn {
     width: 152px;
     border-radius: 100px;
 }
 
-.shortcut-button-list .btn-primary{
+.shortcut-button-list .btn-primary {
     background: #1eb9eb;
     border: none;
 }
 
-.shortcut-button-list .btn-default{
-    background:#FFFFFF;
+.shortcut-button-list .btn-default {
+    background: #FFFFFF;
 }
 
 
-.company-introduce-wrapper{
+.company-introduce-wrapper {
     margin-top: 100px;
 }
 
 
-.company-introduce p{
+.company-introduce p {
     color: #999999;
     font-size: 16px;
     text-indent: 2em;
@@ -151,7 +145,7 @@ li.dropdown:hover .dropdown-menu{
 
 
 
-.recommend-list{
+.recommend-list {
     margin-top: 100px;
 }
 
@@ -176,23 +170,23 @@ li.dropdown:hover .dropdown-menu{
 
 
 
-.about-us{
+.about-us {
     margin-top: 100px;
 }
 
-.about-us img{
+.about-us img {
     height: 226px;
     width: 100%;
 }
 
 
-.snap-list-inner p{
+.snap-list-inner p {
     font-size: 16px;
     color: #999999;
 }
 
 
-.owl-prev{
+.owl-prev {
     position: absolute;
     top: 50%;
     left: 0;
@@ -205,7 +199,7 @@ li.dropdown:hover .dropdown-menu{
     border-radius: 100px;
 }
 
-.owl-next{
+.owl-next {
     position: absolute;
     top: 50%;
     right: 0;
@@ -218,11 +212,11 @@ li.dropdown:hover .dropdown-menu{
     border-radius: 100px;
 }
 
-.about-us h3{
+.about-us h3 {
     color: #1eb9eb;
 }
 
-.about-us p{
+.about-us p {
     color: #999999;
     font-size: 16px;
 }
