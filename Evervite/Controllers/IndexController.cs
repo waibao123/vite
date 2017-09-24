@@ -14,8 +14,8 @@ namespace Evervite.Controllers
 
         public ActionResult Index()
         {
-            var vvv = BllTest.GetAllOptions();
-            ViewBag.CCC = string.Join("<br/>", vvv.Select(item => item.OptionValue));
+            //var vvv = BllTest.GetAllOptions();
+            //ViewBag.CCC = string.Join("<br/>", vvv.Select(item => item.OptionValue));
             return View();
         }
 
