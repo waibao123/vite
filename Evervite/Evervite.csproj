@@ -151,6 +151,7 @@
     <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\productDetail.css" />
     <Content Include="Content\css\productList.css" />
+    <Content Include="Content\css\search.css" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -286,6 +287,9 @@
     <Content Include="Views\Index\Footer.cshtml" />
     <Content Include="Views\Index\MainHeader.cshtml" />
     <Content Include="Views\Index\MainBrandHeader.cshtml" />
+    <Content Include="Views\Index\MainMilkHeader.cshtml" />
+    <Content Include="Views\Index\MainHealthHeader.cshtml" />
+    <Content Include="Views\Index\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

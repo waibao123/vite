@@ -46,17 +46,6 @@ li.dropdown:hover .dropdown-menu {
     position: relative;
 }
 
-.search-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    background: url(../images/search-icon.png);
-    background-size: 100% 100%;
-    width: 23px;
-    height: 23px;
-}
-
-
 
 
 

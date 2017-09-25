@@ -79,6 +79,11 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult Search()
+        {
+            return View();
+        }
+
         public ActionResult Footer()
         {
             return PartialView();
@@ -86,6 +91,16 @@ namespace Evervite.Controllers
 
 
         public ActionResult MainHeader()
+        {
+            return PartialView();
+        }
+
+        public ActionResult MainMilkHeader()
+        {
+            return PartialView();
+        }
+
+        public ActionResult MainHealthHeader()
         {
             return PartialView();
         }
