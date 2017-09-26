@@ -11,25 +11,40 @@ using MySql.Data.MySqlClient;
 
 namespace DataAccessLayer
 {
-    public static class DalTest
+    public class DalTest : DalBase
     {
-        public static List<Options> GetAllOptions()
+        public DalTest(string connKey, int dbType = 0) : base(connKey, dbType) { }
+
+
+        public List<Options> GetAllOptions()
         {
-
-            MySqlConnection mysqlcon = new MySqlConnection(ConfigurationManager.AppSettings.Get("ConnMySql"));
-            mysqlcon.Open();
-            MySqlCommand mysqlcom = new MySqlCommand("SELECT * FROM wp_options", mysqlcon);
-            MySqlDataReader sdr = mysqlcom.ExecuteReader();
-            List<Options> l = QuickDAL.QuickListReader<Options>(sdr);
-            mysqlcom.Dispose();
-            mysqlcon.Close();
-            mysqlcon.Dispose();
-            MySqlParameter sp = new MySqlParameter();
-            sp.DbType = DbType.Int64;
-
-            return l;
-
+            string sql = "SELECT * FROM wp_options";
+            return GetList<Options>(sql, null);
         }
 
+        public List<Options> GetOptions()
+        {
+            string sql = "SELECT * FROM wp_options where option_value like @L AND length(option_value)<@Len limit @Lim";
+            List<IDataParameter> ps = new List<IDataParameter>();
+            ps.Add(new MySqlParameter("@L", "%e%"));
+            ps.Add(new MySqlParameter("@Len", 30));
+            ps.Add(new MySqlParameter("@Lim", 6));
+            return GetList<Options>(sql, ps);
+        }
+
+        public int BatchInsert<T>(List<T> list)
+        {
+            return InsertList(list);
+        }
+
+
+        public List<Product> GetProductsByCategory(int cateId, int limit)
+        {
+            string sql = "SELECT * FROM product where CategoryId=@CategoryId LIMIT @Limit";
+            List<IDataParameter> ps = new List<IDataParameter>();
+            ps.Add(new MySqlParameter("@CategoryId", cateId));
+            ps.Add(new MySqlParameter("@Limit", limit));
+            return GetList<Product>(sql, ps);
+        }
     }
 }

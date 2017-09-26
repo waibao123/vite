@@ -36,8 +36,22 @@ namespace Framework
             ColDbType = t;
         }
 
+        public ColAttribute(string str, ColType t)
+        {
+            ColName = str;
+            ColType = t;
+        }
+
+        public ColAttribute(string str, DbType dt, ColType ct)
+        {
+            ColName = str;
+            ColDbType = dt;
+            ColType = ct;
+        }
+
         public string ColName;
         public DbType ColDbType;
+        public ColType ColType;
     }
 
     public enum ColModeEnum
@@ -46,6 +60,11 @@ namespace Framework
         PointedOnly = 1
     }
 
-
+    public enum ColType
+    {
+        Normal = 0,
+        PK = 1,
+        PK_AI = 2
+    }
 
 }
