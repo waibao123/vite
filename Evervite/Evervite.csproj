@@ -276,9 +276,9 @@
     <Content Include="Views\Index\ProductList.cshtml" />
     <Content Include="Views\Index\ProductMilkList.cshtml" />
     <Content Include="Views\Index\ProductHealthList.cshtml" />
-    <Content Include="Views\Index\productDetail.cshtml" />
-    <Content Include="Views\Index\productMilkDetail.cshtml" />
-    <Content Include="Views\Index\productHealthDetail.cshtml" />
+    <Content Include="Views\Index\ProductDetail.cshtml" />
+    <Content Include="Views\Index\ProductMilkDetail.cshtml" />
+    <Content Include="Views\Index\ProductHealthDetail.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Index\ContractUs.cshtml" />
