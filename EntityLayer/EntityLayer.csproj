@@ -40,7 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BizEntity\ProductAttrKVP.cs" />
     <Compile Include="DbEntity\Options.cs" />
+    <Compile Include="DbEntity\Product.cs" />
+    <Compile Include="DbEntity\ProductAttr.cs" />
+    <Compile Include="DbEntity\ProductAttrMapping.cs" />
+    <Compile Include="DbEntity\ProductCategory.cs" />
+    <Compile Include="Enums\WebsiteEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

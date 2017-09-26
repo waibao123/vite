@@ -76,6 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BizAccess.cs" />
+    <Compile Include="DalBase.cs" />
+    <Compile Include="DalFactory.cs" />
+    <Compile Include="DalSample.cs" />
     <Compile Include="DalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

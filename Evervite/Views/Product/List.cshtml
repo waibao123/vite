@@ -9,12 +9,10 @@
         <div class="col-sm-3 center-block">
 
             <ul class="product-type-list mt30">
-                <li>所有商品</li>
-                <li>快乐成长</li>
-                <li>健康成长</li>
-                <li>男士健康</li>
-                <li>女士健康</li>
-                <li>孕妇童</li>
+                @foreach (var pc in ViewBag.ProductCategory)
+                {
+                    <li><a href="List?id=@pc.Id">@pc.CategoryName</a></li>
+                }
             </ul>
 
             <article class="recommend-list">
@@ -60,85 +58,19 @@
                 <li><a href="javascript:void(0);">首页</a></li>
                 <li><a href="javascript:void(0);">所有商品</a></li>
             </ol>
-
             <ul class="product-list-content">
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
+                @for (int i = 0; i * 4 < ViewBag.Product.Count; i++)
+                {
+                    for (int j = 0; (j < 4) && (i * 4 + j < ViewBag.Product.Count); j++)
+                    {
+                        <li>
+                            <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
+                            <p class="product-name">@ViewBag.Product[i * 4 + j].Name</p>
+                            <p class="product-price">199元</p>
+                        </li>
+                    }
+                }
 
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                    <p class="product-price">199元</p>
-                </li>
 
 
             </ul>

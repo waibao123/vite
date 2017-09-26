@@ -94,8 +94,8 @@
 
             </div>
             <div class="col-sm-7 center-block">
-                <h3>澳乐维他 新一代强力减肥 树莓酮 提取物胶囊减 脂非药 澳洲进口 定制款30粒/瓶 一瓶</h3>
-                <h4 class="mt30">树莓酮 覆盆子酮提取物胶囊男女士快速减肥瘦身产品减脂</h4>
+                <h3>@ViewBag.Product.Title</h3>
+                <h4 class="mt30">@ViewBag.Product.SubTitle</h4>
                 <p class="mt20">
                     <span class="price">199元</span>
                     <span><img class="purchase-btn" src="~/Content/images/buy-btn.png"></span>
@@ -103,19 +103,17 @@
                 <div class="border-line"></div>
                 <div class="row product-introduce">
                     <div class="col-sm-7 center-block">
-                        <h4>商品名称：新一代强力减肥</h4>
-                        <h4>商品编号：1990841538</h4>
-                        <h4>商品毛重：200G</h4>
-                        <h4>主要成分：其他</h4>
-                        <h4>蓝帽标识：营养膳食补充剂（非食健字）</h4>
+                        @for (int i = 0; i * 2 < ViewBag.ProductAttr.Count; i++)
+                        {
+                            <h4>@ViewBag.ProductAttr[i * 2].AttrName：@ViewBag.ProductAttr[i * 2].AttrValue</h4>
+                        }
                     </div>
 
                     <div class="col-sm-5 center-block">
-                        <h4>功能：其他</h4>
-                        <h4>国产/进口：进口</h4>
-                        <h4>价位：300-499</h4>
-                        <h4>试用人群：通用商品</h4>
-                        <h4>剂型：软胶囊</h4>
+                        @for (int i = 0; i * 2 < ViewBag.ProductAttr.Count; i++)
+                        {
+                            <h4>@ViewBag.ProductAttr[i * 2 + 1].AttrName：@ViewBag.ProductAttr[i * 2 + 1].AttrValue</h4>
+                        }
                     </div>
 
                 </div>
