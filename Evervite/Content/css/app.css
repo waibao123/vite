@@ -281,7 +281,7 @@ footer a {
     display: block;
     width: 64px;
     height: 52px;
-    background: url("../../images/weixin-logo-shadow.png");
+    background: url("../images/weixin-logo-shadow.png");
 }
 
 .weibo-logo {
@@ -289,15 +289,15 @@ footer a {
     display: block;
     width: 66px;
     height: 56px;
-    background: url("../../images/weibo-icon-shadow.png");
+    background: url("../images/weibo-icon-shadow.png");
 }
 
 .qr-pic:hover .weixin-logo {
-    background: url("../../images/weixin-logo.png");
+    background: url("../images/weixin-logo.png");
 }
 
 .qr-pic:hover .weibo-logo {
-    background: url("../../images/weibo-icon-shadow.png");
+    background: url("../images/weibo-icon-shadow.png");
 }
 
 li.dropdown:hover .dropdown-menu {
