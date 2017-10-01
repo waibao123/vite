@@ -297,7 +297,7 @@ footer a {
 }
 
 .qr-pic:hover .weibo-logo {
-    background: url("../images/weibo-icon-shadow.png");
+    background: url("../images/weibo_active.png");
 }
 
 li.dropdown:hover .dropdown-menu {
@@ -400,4 +400,9 @@ a:hover {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
+}
+
+
+.brand-logo {
+    padding: 10px 0;
 }
