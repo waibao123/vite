@@ -152,6 +152,7 @@
     <Content Include="Content\css\productDetail.css" />
     <Content Include="Content\css\productList.css" />
     <Content Include="Content\css\search.css" />
+    <Content Include="Content\images\aoleru_logo.png" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
