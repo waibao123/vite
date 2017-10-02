@@ -112,7 +112,7 @@ li.dropdown:hover .dropdown-menu {
 }
 
 .shortcut-button-list .btn-primary {
-    background: #1eb9eb;
+    background: #004a9f;
     border: none;
 }
 
@@ -193,7 +193,7 @@ li.dropdown:hover .dropdown-menu {
     top: 50%;
     right: 0;
     transform: translateY(-45px);
-    background: #8edcf5 !important;
+    background: #7fa4cf !important;
     width: 45px;
     height: 45px;
     line-height: 40px;
