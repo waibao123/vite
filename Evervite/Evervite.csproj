@@ -147,6 +147,7 @@
     <Content Include="Content\css\default.css" />
     <Content Include="Content\css\helpCenter.css" />
     <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\monitor.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\productDetail.css" />
@@ -292,6 +293,10 @@
     <Content Include="Views\Index\MainMilkHeader.cshtml" />
     <Content Include="Views\Index\MainHealthHeader.cshtml" />
     <Content Include="Views\Index\Search.cshtml" />
+    <Content Include="Views\Index\HealthBrandStory.cshtml" />
+    <Content Include="Views\Index\MilkBrandStory.cshtml" />
+    <Content Include="Views\Index\MainBrandStory.cshtml" />
+    <Content Include="Views\Index\ProductionMonitor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

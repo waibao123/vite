@@ -110,5 +110,27 @@ namespace Evervite.Controllers
             return PartialView();
         }
 
+        public ActionResult HealthBrandStory()
+        {
+            return View();
+        }
+
+        public ActionResult MilkBrandStory()
+        {
+            return View();
+        }
+
+
+        public ActionResult MainBrandStory()
+        {
+            return View();
+        }
+
+
+        public ActionResult ProductionMonitor()
+        {
+            return View();
+        }
+
     }
 }
