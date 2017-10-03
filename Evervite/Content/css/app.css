@@ -406,3 +406,15 @@ a:hover {
 .brand-logo {
     padding: 10px 0;
 }
+
+
+.search-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: url(../images/search-icon.png);
+    background-size: 100% 100%;
+    width: 23px;
+    height: 23px;
+    border: none;
+}
