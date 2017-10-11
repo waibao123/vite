@@ -18,7 +18,9 @@ namespace BizLayer
 
         public static List<Product> GetProductsByCategoryId(int cateId)
         {
-            return DalFactory.BizAccessDal.GetProductsByCategoryId(cateId);
+            List<int> cateIds = new List<int>();
+            cateIds.Add(cateId);
+            return DalFactory.BizAccessDal.GetProductsByCategoryId(cateIds);
         }
 
         public static List<Product> GetProductsByCategoryId(List<int> cateIds)

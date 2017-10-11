@@ -2,6 +2,7 @@
 using EntityLayer.DbEntity;
 using EntityLayer.Enums;
 using Framework;
+using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -29,17 +30,44 @@ namespace ImportTool
             InitializeComponent();
             DicCatagory = new Dictionary<string, int>();
             DicAttr = new Dictionary<string, int>();
-            WebsiteId = (int)WebsiteEnum.EnerVite;
 
+            WebsiteId = (int)WebsiteEnum.EnerVite;
             LoadData();
+        }
+
+        int GetColIndex(char c)
+        {
+            return c - 'A' + 1;
         }
 
         void LoadData()
         {
-            string[] lines = File.ReadAllLines("C:\\1.txt",Encoding.UTF8);
-            foreach (string line in lines)
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            object missing = System.Reflection.Missing.Value;
+            Workbook wb = app.Application.Workbooks.Open("C:\\" + WebsiteId + ".xlsx", missing, true, missing, missing, missing, missing, missing, missing, true, missing, missing, missing, missing, missing);
+            Worksheet ws = (Worksheet)wb.Worksheets.get_Item(1);
+            int rowMax = ws.UsedRange.Cells.Rows.Count;
+            for (int i = 2; i <= rowMax; i++)
             {
-                Product p = CreateProduct(line.Split('\t'));
+                Product p = new Product();
+                p.Name = ((Range)ws.Cells[i, GetColIndex('B')]).Text.ToString().Trim('\n');
+                p.Title = ((Range)ws.Cells[i, GetColIndex('I')]).Text.ToString().Trim('\n');
+                p.SubTitle = ((Range)ws.Cells[i, GetColIndex('J')]).Text.ToString().Trim('\n');
+                p.Price = 1234;
+                p.PurchaseUrl = ((Range)ws.Cells[i, GetColIndex('H')]).Text.ToString().Trim('\n');
+                if (FormatTools.IsAnyNullOrWhiteSpace(p.Name, p.PurchaseUrl))
+                    break;
+                p = CreateProduct(p);
+
+                string[] categoryNames = ((Range)ws.Cells[i, GetColIndex('E')]).Text.ToString().Trim('\n').Split('/');
+                foreach (string name in categoryNames)
+                {
+                    if (string.IsNullOrWhiteSpace(name))
+                        continue;
+                    int catagoryId = GetCatagoryId(name);
+                    string sql = string.Format("INSERT INTO productcatebelong values({0},{1})", catagoryId, p.Id);
+                    DalFactory.ImportDal.ExecuteNonQuery(sql);
+                }
 
                 string sqlDelAttrMapping = "DELETE FROM productattrmapping WHERE ProductId=" + p.Id;
                 Dictionary<string, string> kvps = GetAttrsFromJD(p.PurchaseUrl);
@@ -53,18 +81,20 @@ namespace ImportTool
                     pam.Idx = idx++;
                     DalFactory.ImportDal.InsertItem(pam);
                 }
+
             }
+            wb.Close();
         }
 
-        Product CreateProduct(string[] props)
+        Product CreateProduct(Product p)
         {
-            Product p = new Product();
-            p.Name = props[0];
-            p.Title = props[2];
-            p.SubTitle = props[3];
-            p.Price = 111;
-            p.PurchaseUrl = props[1];
-            p.CategoryId = GetCatagoryId(props[4]);
+            //Product p = new Product();
+            //p.Name = props[0];
+            //p.Title = props[2];
+            //p.SubTitle = props[3];
+            //p.Price = 111;
+            //p.PurchaseUrl = props[1];
+            //p.CategoryId = GetCatagoryId(props[4]);
 
             DalFactory.ImportDal.InsertItem(p);
 

@@ -11,7 +11,7 @@
             <ul class="product-type-list mt30">
                 @foreach (var pc in ViewBag.ProductCategory)
                 {
-                    <li><a href="List?id=@pc.Id">@pc.CategoryName</a></li>
+                    <li><a href="List?ws=@ViewBag.Website&ct=@pc.Id">@pc.CategoryName</a></li>
                 }
             </ul>
 
@@ -59,14 +59,16 @@
                 <li><a href="javascript:void(0);">所有商品</a></li>
             </ol>
             <ul class="product-list-content">
-                @for (int i = 0; i * 4 < ViewBag.Product.Count; i++)
+                @for (int i = 0; i * 4 < ViewBag.Products.Count; i++)
                 {
-                    for (int j = 0; (j < 4) && (i * 4 + j < ViewBag.Product.Count); j++)
+                    for (int j = 0; (j < 4) && (i * 4 + j < ViewBag.Products.Count); j++)
                     {
                         <li>
-                            <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                            <p class="product-name">@ViewBag.Product[i * 4 + j].Name</p>
-                            <p class="product-price">199元</p>
+                            <a href="Detail?ws=@ViewBag.Website&id=@ViewBag.Products[i * 4 + j].Id">
+                                <img src="~/Content/ProductImage/@ViewBag.Website/@ViewBag.Products[i * 4 + j].Name/gallery-1.jpg" />
+                                <p class="product-name">@ViewBag.Products[i * 4 + j].Name</p>
+                                <p class="product-price">199元</p>
+                            </a>
                         </li>
                     }
                 }

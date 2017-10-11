@@ -25,16 +25,9 @@ namespace DataAccessLayer
             return GetList<ProductCategory>(sql, ps);
         }
 
-        public List<Product> GetProductsByCategoryId(int cateId)
-        {
-            string sql = "SELECT * FROM product WHERE CategoryId=@CategoryId";
-            List<IDataParameter> ps = new List<IDataParameter>();
-            ps.Add(new MySqlParameter("@CategoryId", cateId));
-            return GetList<Product>(sql, ps);
-        }
         public List<Product> GetProductsByCategoryId(List<int> cateIds)
         {
-            string sql = string.Format("SELECT * FROM product WHERE CategoryId IN ({0})", string.Join(",", cateIds));
+            string sql = string.Format("SELECT * FROM product WHERE Id IN (SELECT ProductId FROM productcatebelong WHERE CategoryId IN({0}))", string.Join(",", cateIds));
             return GetList<Product>(sql, null);
         }
 

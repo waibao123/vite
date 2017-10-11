@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="col-sm-5 center-block">
-                        @for (int i = 0; i * 2 < ViewBag.ProductAttr.Count; i++)
+                        @for (int i = 0; i * 2 + 1 < ViewBag.ProductAttr.Count; i++)
                         {
                             <h4>@ViewBag.ProductAttr[i * 2 + 1].AttrName：@ViewBag.ProductAttr[i * 2 + 1].AttrValue</h4>
                         }
@@ -236,7 +236,7 @@
             </div>
             <div class="col-sm-9 center-block text-center">
 
-                <img src="~/Content/images/product-content.jpg" />
+                <img src="~/Content/ProductImage/@ViewBag.Website/@ViewBag.Product.Name/content.jpg" />
 
             </div>
 

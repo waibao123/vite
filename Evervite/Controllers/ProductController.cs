@@ -21,30 +21,34 @@ namespace Evervite.Controllers
         //    return View();
         //}
 
+        static int DefaultWeb = (int)WebsiteEnum.EnerVite;
 
-        public ActionResult List(string idStr)
+        public ActionResult List(string ws, string ct)
         {
-            List<ProductCategory> pcs = BizAccess.GetAllProductCategory((int)WebsiteEnum.EnerVite);
+            int webId = FormatTools.ParseInt(ws, DefaultWeb);
+            int categoryId = FormatTools.ParseInt(ct);
+            List<ProductCategory> pcs = BizAccess.GetAllProductCategory(webId);
             List<int> ids = pcs.Select(item => item.Id).ToList();
-            int id = FormatTools.ParseInt(idStr);
             List<Product> list;
-            if (ids.Contains(id))
-                list = BizAccess.GetProductsByCategoryId(id);
+            if (ids.Contains(categoryId))
+                list = BizAccess.GetProductsByCategoryId(categoryId);
             else
                 list = BizAccess.GetProductsByCategoryId(ids);
             ViewBag.ProductCategory = pcs;
-            ViewBag.Product = list;
+            ViewBag.Products = list;
+            ViewBag.Website = webId;
             return View();
         }
 
-        public ActionResult Detail(string idStr)
+        public ActionResult Detail(string ws, int id)
         {
-            int id =1;
+            int webId = FormatTools.ParseInt(ws, DefaultWeb);
             Product p = BizAccess.GetProductById(id);
             List<ProductAttrKVP> attrs = BizAccess.GetProductAttrs(p.Id);
 
             ViewBag.Product = p;
             ViewBag.ProductAttr = attrs;
+            ViewBag.Website = webId;
             return View();
         }
 
