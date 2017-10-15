@@ -14,4 +14,8 @@
         navigationText: ["<", ">"]
     });
 
+    $(".recommend-product").on("click", function () {
+        $(".thumb-pic").attr("src", $(this).attr("src"));
+    });
+
 });
