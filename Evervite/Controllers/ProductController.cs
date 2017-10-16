@@ -30,13 +30,22 @@ namespace Evervite.Controllers
             List<ProductCategory> pcs = BizAccess.GetAllProductCategory(webId);
             List<int> ids = pcs.Select(item => item.Id).ToList();
             List<Product> list;
+            string curCategory;
             if (ids.Contains(categoryId))
+            {
                 list = BizAccess.GetProductsByCategoryId(categoryId);
+                curCategory = pcs.First(item => item.Id == categoryId).CategoryName;
+            }
             else
+            {
                 list = BizAccess.GetProductsByCategoryId(ids);
+                curCategory = "全部商品";
+            }
             ViewBag.ProductCategory = pcs;
             ViewBag.Products = list;
             ViewBag.Website = webId;
+            ViewBag.Category = curCategory;
+            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
             return View();
         }
 
@@ -49,6 +58,19 @@ namespace Evervite.Controllers
             ViewBag.Product = p;
             ViewBag.ProductAttr = attrs;
             ViewBag.Website = webId;
+            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
+            return View();
+        }
+
+        public ActionResult Search(string ws, string kw)
+        {
+            int webId = FormatTools.ParseInt(ws, DefaultWeb);
+
+            ViewBag.ProductList = BizAccess.GetProductsByName(webId, kw);
+            if (ViewBag.ProductList == null || ViewBag.ProductList.Count == 0)
+                ViewBag.Msg = "无相关结果，请更换查询条件重试";
+            ViewBag.Website = webId;
+            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
             return View();
         }
 

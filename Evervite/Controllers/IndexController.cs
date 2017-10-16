@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BizLayer;
+using EntityLayer.Enums;
 
 namespace Evervite.Controllers
 {
@@ -21,6 +22,9 @@ namespace Evervite.Controllers
 
         public ActionResult MainSite()
         {
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.EnerVite);
+            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.EnerVite);
+            ViewBag.WebsiteId = (int)WebsiteEnum.EnerVite;
             return View();
         }
 
@@ -56,11 +60,17 @@ namespace Evervite.Controllers
 
         public ActionResult MainMilkSite()
         {
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.OZ);
+            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.OZ);
+            ViewBag.WebsiteId = (int)WebsiteEnum.OZ;
             return View();
         }
 
         public ActionResult MainHealthSite()
         {
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.NTSA);
+            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.NTSA);
+            ViewBag.WebsiteId = (int)WebsiteEnum.NTSA;
             return View();
         }
 

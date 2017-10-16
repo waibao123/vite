@@ -23,7 +23,6 @@ namespace ImportTool
     {
         Dictionary<string, int> DicCatagory;
         Dictionary<string, int> DicAttr;
-        int WebsiteId;
 
         public Form1()
         {
@@ -31,8 +30,9 @@ namespace ImportTool
             DicCatagory = new Dictionary<string, int>();
             DicAttr = new Dictionary<string, int>();
 
-            WebsiteId = (int)WebsiteEnum.EnerVite;
-            LoadData();
+            LoadData((int)WebsiteEnum.EnerVite);
+            LoadData((int)WebsiteEnum.OZ);
+            LoadData((int)WebsiteEnum.NTSA);
         }
 
         int GetColIndex(char c)
@@ -40,22 +40,32 @@ namespace ImportTool
             return c - 'A' + 1;
         }
 
-        void LoadData()
+        string GetCellText(Worksheet ws, int row, char col)
+        {
+            return ((Range)ws.Cells[row, GetColIndex(col)]).Text.ToString().Trim('\n');
+
+        }
+
+        void LoadData(int websiteId)
         {
             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
             object missing = System.Reflection.Missing.Value;
-            Workbook wb = app.Application.Workbooks.Open("C:\\" + WebsiteId + ".xlsx", missing, true, missing, missing, missing, missing, missing, missing, true, missing, missing, missing, missing, missing);
-            Worksheet ws = (Worksheet)wb.Worksheets.get_Item(1);
+            Workbook wb = app.Application.Workbooks.Open("C:\\envr.xlsx", missing, true, missing, missing, missing, missing, missing, missing, true, missing, missing, missing, missing, missing);
+            Worksheet ws = (Worksheet)wb.Worksheets.get_Item(websiteId);
             int rowMax = ws.UsedRange.Cells.Rows.Count;
-            for (int i = 2; i <= rowMax; i++)
+            for (int i = 3; i <= rowMax; i++)
             {
                 Product p = new Product();
-                p.Name = ((Range)ws.Cells[i, GetColIndex('B')]).Text.ToString().Trim('\n');
-                p.Title = ((Range)ws.Cells[i, GetColIndex('I')]).Text.ToString().Trim('\n');
-                p.SubTitle = ((Range)ws.Cells[i, GetColIndex('J')]).Text.ToString().Trim('\n');
+                p.Name = GetCellText(ws, i, ('B'));
+                p.Title = GetCellText(ws, i, ('I'));
+                p.SubTitle = GetCellText(ws, i, ('J'));
+                if (p.SubTitle == "无")
+                    p.SubTitle = string.Empty;
                 p.Price = 1234;
-                p.PurchaseUrl = ((Range)ws.Cells[i, GetColIndex('H')]).Text.ToString().Trim('\n');
-                if (FormatTools.IsAnyNullOrWhiteSpace(p.Name, p.PurchaseUrl))
+                p.PurchaseUrl = GetCellText(ws, i, ('H'));
+                if (GetCellText(ws, i, ('A')) == "X")
+                    p.IsRecommand = websiteId;
+                if (FormatTools.IsAnyNullOrWhiteSpace(p.Name, p.Title))
                     break;
                 p = CreateProduct(p);
 
@@ -64,12 +74,14 @@ namespace ImportTool
                 {
                     if (string.IsNullOrWhiteSpace(name))
                         continue;
-                    int catagoryId = GetCatagoryId(name);
+                    int catagoryId = GetCatagoryId(name, websiteId);
                     string sql = string.Format("INSERT INTO productcatebelong values({0},{1})", catagoryId, p.Id);
                     DalFactory.ImportDal.ExecuteNonQuery(sql);
                 }
 
-                string sqlDelAttrMapping = "DELETE FROM productattrmapping WHERE ProductId=" + p.Id;
+                if (string.IsNullOrWhiteSpace(p.PurchaseUrl))
+                    continue;
+                //string sqlDelAttrMapping = "DELETE FROM productattrmapping WHERE ProductId=" + p.Id;
                 Dictionary<string, string> kvps = GetAttrsFromJD(p.PurchaseUrl);
                 int idx = 1;
                 foreach (var kvp in kvps)
@@ -98,23 +110,23 @@ namespace ImportTool
 
             DalFactory.ImportDal.InsertItem(p);
 
-            string sqlQuery = string.Format("SELECT * FROM product WHERE PurchaseUrl='{0}'", p.PurchaseUrl);
+            string sqlQuery = string.Format("SELECT * FROM product WHERE Name='{0}'", p.Name);
             return DalFactory.ImportDal.GetItem<Product>(sqlQuery, null);
         }
 
-        int GetCatagoryId(string name)
+        int GetCatagoryId(string name, int webId)
         {
-            if (DicCatagory.ContainsKey(name))
-                return DicCatagory[name];
-            string sqlQuery = string.Format("SELECT * FROM productcategory WHERE WebId={0} AND CategoryName='{1}'", WebsiteId, name);
+            if (DicCatagory.ContainsKey(name + webId))
+                return DicCatagory[name + webId];
+            string sqlQuery = string.Format("SELECT * FROM productcategory WHERE WebId={0} AND CategoryName='{1}'", webId, name);
             ProductCategory pc = DalFactory.ImportDal.GetItem<ProductCategory>(sqlQuery, null);
             if (pc == null)
             {
-                string sqlInsert = string.Format("INSERT INTO productcategory VALUES(0,{0},'{1}')", WebsiteId, name);
+                string sqlInsert = string.Format("INSERT INTO productcategory VALUES(0,{0},'{1}')", webId, name);
                 DalFactory.ImportDal.ExecuteNonQuery(sqlInsert);
                 pc = DalFactory.ImportDal.GetItem<ProductCategory>(sqlQuery, null);
             }
-            DicCatagory[name] = pc.Id;
+            DicCatagory[name + webId] = pc.Id;
             return pc.Id;
         }
 

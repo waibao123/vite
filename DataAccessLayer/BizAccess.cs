@@ -39,6 +39,17 @@ namespace DataAccessLayer
             return GetItem<Product>(sql, ps);
         }
 
+        public List<Product> GetProductsByName(int websiteId, string keyword)
+        {
+            string sql = "SELECT * FROM product WHERE Id IN (SELECT DISTINCT ProductId FROM productcatebelong WHERE CategoryId IN (SELECT Id FROM productcategory WHERE WebId=@WebId))";
+            if (!string.IsNullOrWhiteSpace(keyword))
+                sql += string.Format(" AND Name LIKE '%{0}%'", keyword);
+            List<IDataParameter> ps = new List<IDataParameter>();
+            ps.Add(new MySqlParameter("@WebId", websiteId));
+
+            return GetList<Product>(sql, ps);
+        }
+
         public List<ProductAttrKVP> GetProductAttrs(int productId)
         {
             StringBuilder sbSql = new StringBuilder();
@@ -51,6 +62,16 @@ namespace DataAccessLayer
             List<IDataParameter> ps = new List<IDataParameter>();
             ps.Add(new MySqlParameter("@ProductId", productId));
             return GetList<ProductAttrKVP>(sbSql.ToString(), ps);
+        }
+
+        public List<Product> GetRecommandProduct(int websiteId)
+        {
+            string sql = "SELECT * FROM product WHERE";
+            if (websiteId == 0)
+                sql += " IsRecommand IS NOT NULL";
+            else
+                sql += " IsRecommand = " + websiteId;
+            return GetList<Product>(sql, null);
         }
     }
 }

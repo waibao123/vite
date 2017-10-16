@@ -8,8 +8,8 @@ namespace EntityLayer.Enums
 {
     public enum WebsiteEnum
     {
-        NTSA = 1,
-        EnerVite = 2,
-        OZ = 3
+        EnerVite = 1,
+        OZ = 2,
+        NTSA = 3
     }
 }

@@ -13,8 +13,6 @@ namespace EntityLayer.DbEntity
         [Col("Id", ColType.PK_AI)]
         public int Id { get; set; }
 
-        public int CategoryId { get; set; }
-
         public string Name { get; set; }
 
         public string Title { get; set; }
@@ -25,7 +23,6 @@ namespace EntityLayer.DbEntity
 
         public string PurchaseUrl { get; set; }
 
-        public string ProductDetail { get; set; }
-
+        public int? IsRecommand { get; set; }
     }
 }

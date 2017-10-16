@@ -297,6 +297,7 @@
     <Content Include="Views\Index\MilkBrandStory.cshtml" />
     <Content Include="Views\Index\MainBrandStory.cshtml" />
     <Content Include="Views\Index\ProductionMonitor.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

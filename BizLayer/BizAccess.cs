@@ -33,10 +33,19 @@ namespace BizLayer
             return DalFactory.BizAccessDal.GetProductById(id);
         }
 
+        public static List<Product> GetProductsByName(int websiteId, string keyword)
+        {
+            return DalFactory.BizAccessDal.GetProductsByName(websiteId, keyword);
+        }
+
         public static List<ProductAttrKVP> GetProductAttrs(int productId)
         {
             return DalFactory.BizAccessDal.GetProductAttrs(productId);
         }
 
+        public static List<Product> GetRecommandProduct(int websiteId)
+        {
+            return DalFactory.BizAccessDal.GetRecommandProduct(websiteId);
+        }
     }
 }
