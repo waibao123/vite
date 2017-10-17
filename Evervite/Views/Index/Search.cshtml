@@ -56,10 +56,12 @@
                 <li class="search-outer-wrapper">
                     <div class="search-outer">
                         <div class="row text-center">
-                            <form class="search-wrapper">
-                                <input type="text" class="form-control" placeholder="请输入您要搜索的商品">
-                                <div class="search-btn"></div>
+
+                            <form class="search-wrapper" method="get" action="/Product/Search">
+                                <input name="kw" type="text" class="form-control" placeholder="请输入您要搜索的商品">
+                                <input type="submit" value="" class="search-btn">
                             </form>
+                        
                         </div>
                     </div>
                 </li>
