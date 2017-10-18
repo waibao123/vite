@@ -63,13 +63,14 @@
     box-sizing: border-box;
 }
 
-.product-list-content li{
+.product-list-content li {
     width: 22%;
     display: inline-block;
     border: 1px solid #d2d2d2;
     margin-left: 15px;
     box-sizing: border-box;
     margin-top: 10px;
+    vertical-align: top;
 }
 
 .product-list-content li img{
