@@ -26,9 +26,14 @@
     margin-top: 100px;
 }
 
-    .product-detail img {
-        max-width: 100%;
-    }
+.product-detail img {
+    max-width: 100%;
+}
+
+.thumb-pic{
+    width:100%;
+    height:auto;
+}
 
 .owl-prev {
     position: absolute;
@@ -72,4 +77,8 @@
 
 .product-introduce h4 {
     color: #666666;
+}
+
+.recommend-product{
+    width:100%;
 }

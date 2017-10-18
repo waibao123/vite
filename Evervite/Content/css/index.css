@@ -107,7 +107,7 @@ li.dropdown:hover .dropdown-menu {
 }
 
 .shortcut-button-list .btn {
-    width: 152px;
+    min-width: 152px;
     border-radius: 100px;
 }
 
