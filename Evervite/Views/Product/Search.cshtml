@@ -1,19 +1,13 @@
 ﻿@{
-    ViewBag.Title = "澳乐维他";
-    Layout = "~/Views/Shared/MainSiteLayout.cshtml";
-    @Styles.Render("~/Content/css/productList.css");
-
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/search.css");
 }
+
 <div class="container">
+
     <div class="row">
         <div class="col-sm-3 center-block">
-
-            <ul class="product-type-list mt30">
-                @foreach (var pc in ViewBag.ProductCategory)
-                {
-                    <li><a href="List?ws=@ViewBag.Website&ct=@pc.Id">@pc.CategoryName</a></li>
-                }
-            </ul>
 
             <article class="recommend-list">
 
@@ -22,6 +16,7 @@
                     <div class="recommend-list-title">商品推荐</div>
 
                     <ul>
+
                         @foreach (var p in ViewBag.RecommandList)
                         {
                             <li class="snap-list-outer">
@@ -36,6 +31,7 @@
                                 </div>
                             </li>
                         }
+
                     </ul>
 
                 </div>
@@ -43,27 +39,43 @@
 
         </div>
         <div class="col-sm-9 center-block">
+
             <ol class="breadcrumb">
                 <li><a href="javascript:void(0);">首页</a></li>
-                <li><a href="javascript:void(0);">@ViewBag.Category</a></li>
+                <li><a href="javascript:void(0);">搜索结果</a></li>
+                <li class="search-outer-wrapper">
+                    <div class="search-outer">
+                        <div class="row text-center">
+                            <form class="search-wrapper" method="get" action="/Product/Search">
+                                <input name="kw" type="text" class="form-control" placeholder="请输入您要搜索的商品">
+                                <input name="ws" type="text" value="@ViewBag.Website" hidden="hidden">
+                                <input type="submit" value="" class="search-btn">
+                            </form>
+                        </div>
+                    </div>
+                </li>
             </ol>
+
             <ul class="product-list-content">
-                @for (int i = 0; i * 4 < ViewBag.Products.Count; i++)
+                @ViewBag.Msg
+                @foreach (var p in ViewBag.ProductList)
                 {
-                    for (int j = 0; (j < 4) && (i * 4 + j < ViewBag.Products.Count); j++)
-                    {
-                        <li>
-                            <a href="Detail?ws=@ViewBag.Website&id=@ViewBag.Products[i * 4 + j].Id">
-                                <img src="~/Content/ProductImage/@ViewBag.Products[i * 4 + j].GalleryImages[0]" />
-                                <p class="product-name">@ViewBag.Products[i * 4 + j].Name</p>
-                            </a>
-                        </li>
-                    }
+                    <li>
+                        <a target="_blank" href="/Product/Detail?ws=@ViewBag.WebsiteId&id=@p.Id">
+                            <img src="~/Content/ProductImage/@p.GalleryImages[0]" />
+                            <p class="product-name">@p.Name</p>
+                        </a>
+                    </li>
                 }
 
 
-
             </ul>
+
         </div>
+
     </div>
+
+
+
+
 </div>

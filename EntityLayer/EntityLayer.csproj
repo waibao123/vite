@@ -46,6 +46,7 @@
     <Compile Include="DbEntity\ProductAttr.cs" />
     <Compile Include="DbEntity\ProductAttrMapping.cs" />
     <Compile Include="DbEntity\ProductCategory.cs" />
+    <Compile Include="Enums\PickPicMode.cs" />
     <Compile Include="Enums\WebsiteEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

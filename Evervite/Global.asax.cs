@@ -23,5 +23,10 @@ namespace Evervite
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_BeginRequest(Object sender, EventArgs e)
+        {
+            if (Context.Request.FilePath == "/") Context.RewritePath("index/index");
+        }
     }
 }

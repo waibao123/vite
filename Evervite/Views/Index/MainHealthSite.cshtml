@@ -101,8 +101,8 @@
                     {
                         <div class="snap-list-outer">
                             <div class="snap-list-inner">
-                                <a href="javascript:void(0);">
-                                    <img class="recommend-product" src="~/Content/ProductImage/@ViewBag.Website/@p.Name/gallery-1.jpg">
+                                <a target="_blank" href="/Product/Detail?ws=@ViewBag.WebsiteId&id=@p.Id">
+                                    <img class="recommend-product" src="~/Content/ProductImage/@p.GalleryImages[0]">
                                     <div>
                                         <h3>@p.Name</h3>
                                         <p>@p.Title</p>

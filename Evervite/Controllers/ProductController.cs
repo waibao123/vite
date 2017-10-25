@@ -25,27 +25,37 @@ namespace Evervite.Controllers
 
         public ActionResult List(string ws, string ct)
         {
-            int webId = FormatTools.ParseInt(ws, DefaultWeb);
-            int categoryId = FormatTools.ParseInt(ct);
-            List<ProductCategory> pcs = BizAccess.GetAllProductCategory(webId);
-            List<int> ids = pcs.Select(item => item.Id).ToList();
-            List<Product> list;
-            string curCategory;
-            if (ids.Contains(categoryId))
+            try
             {
-                list = BizAccess.GetProductsByCategoryId(categoryId);
-                curCategory = pcs.First(item => item.Id == categoryId).CategoryName;
+                int webId = FormatTools.ParseInt(ws, DefaultWeb);
+                int categoryId = FormatTools.ParseInt(ct);
+                List<ProductCategory> pcs = BizAccess.GetAllProductCategory(webId);
+                List<int> ids = pcs.Select(item => item.Id).ToList();
+                List<Product> list;
+                string curCategory;
+                if (ids.Contains(categoryId))
+                {
+                    list = BizAccess.GetProductsByCategoryId(categoryId);
+                    curCategory = pcs.First(item => item.Id == categoryId).CategoryName;
+                }
+                else
+                {
+                    list = BizAccess.GetProductsByCategoryId(ids);
+                    curCategory = "全部商品";
+                }
+                list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+                List<Product> recList =  BizAccess.GetRecommandProduct(webId);
+                recList.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+                ViewBag.ProductCategory = pcs;
+                ViewBag.Products = list;
+                ViewBag.Website = webId;
+                ViewBag.Category = curCategory;
+                ViewBag.RecommandList = recList;
             }
-            else
+            catch (Exception ex)
             {
-                list = BizAccess.GetProductsByCategoryId(ids);
-                curCategory = "全部商品";
+                LogRecord.WriteLog(ex.ToString());
             }
-            ViewBag.ProductCategory = pcs;
-            ViewBag.Products = list;
-            ViewBag.Website = webId;
-            ViewBag.Category = curCategory;
-            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
             return View();
         }
 
@@ -54,11 +64,16 @@ namespace Evervite.Controllers
             int webId = FormatTools.ParseInt(ws, DefaultWeb);
             Product p = BizAccess.GetProductById(id);
             List<ProductAttrKVP> attrs = BizAccess.GetProductAttrs(p.Id);
+            p.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, p.Name, PickPicMode.AllGallery);
+            p.ContentImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, p.Name, PickPicMode.Content);
+
+            List<Product> recList = BizAccess.GetRecommandProduct(webId);
+            recList.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
 
             ViewBag.Product = p;
             ViewBag.ProductAttr = attrs;
             ViewBag.Website = webId;
-            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
+            ViewBag.RecommandList = recList;
             return View();
         }
 
@@ -66,11 +81,17 @@ namespace Evervite.Controllers
         {
             int webId = FormatTools.ParseInt(ws, DefaultWeb);
 
-            ViewBag.ProductList = BizAccess.GetProductsByName(webId, kw);
+            List<Product> sr = BizAccess.GetProductsByName(webId, kw);
+            sr.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+            List<Product> recList = BizAccess.GetRecommandProduct(webId);
+            recList.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+
+            ViewBag.ProductList = sr;
             if (ViewBag.ProductList == null || ViewBag.ProductList.Count == 0)
                 ViewBag.Msg = "无相关结果，请更换查询条件重试";
             ViewBag.Website = webId;
-            ViewBag.RecommandList = BizAccess.GetRecommandProduct(webId);
+            ViewBag.RecommandList = recList;
+
             return View();
         }
 

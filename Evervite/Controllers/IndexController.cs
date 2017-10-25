@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BizLayer;
 using EntityLayer.Enums;
+using EntityLayer.DbEntity;
 
 namespace Evervite.Controllers
 {
@@ -22,9 +23,13 @@ namespace Evervite.Controllers
 
         public ActionResult MainSite()
         {
-            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.EnerVite);
-            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.EnerVite);
-            ViewBag.WebsiteId = (int)WebsiteEnum.EnerVite;
+            int webId = (int)WebsiteEnum.EnerVite;
+            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
+            ViewBag.ProductList = list;
+            ViewBag.WebsiteId = webId;
             return View();
         }
 
@@ -60,17 +65,25 @@ namespace Evervite.Controllers
 
         public ActionResult MainMilkSite()
         {
-            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.OZ);
-            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.OZ);
-            ViewBag.WebsiteId = (int)WebsiteEnum.OZ;
+            int webId = (int)WebsiteEnum.OZ;
+            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
+            ViewBag.ProductList = list;
+            ViewBag.WebsiteId = webId;
             return View();
         }
 
         public ActionResult MainHealthSite()
         {
-            ViewBag.CategoryList = BizAccess.GetAllProductCategory((int)WebsiteEnum.NTSA);
-            ViewBag.ProductList = BizAccess.GetRecommandProduct((int)WebsiteEnum.NTSA);
-            ViewBag.WebsiteId = (int)WebsiteEnum.NTSA;
+            int webId = (int)WebsiteEnum.NTSA;
+            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+
+            ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
+            ViewBag.ProductList = list;
+            ViewBag.WebsiteId = webId;
             return View();
         }
 
