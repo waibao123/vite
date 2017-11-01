@@ -13,33 +13,33 @@
     <div class="content-inner">
         <div class="form-wrapper center-block">
             <form>
-
+                <input type="hidden" name="loadCnt" value="@ViewBag.Cnt" />
                 <div class="form-group">
                     <label for="inputTheme">主题</label>
-                    <input type="text" class="form-control" id="inputTheme" placeholder="">
+                    <input type="text" class="form-control" id="inputTheme" name="title" placeholder="" value="@ViewBag.Title">
                 </div>
 
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6">
                             <label for="inputTheme">姓名</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="">
+                            <input type="text" class="form-control" id="inputName" name="name" placeholder="" value="@ViewBag.Name">
                         </div>
                         <div class="col-sm-6">
                             <label for="inputTheme">手机</label>
-                            <input type="tel" class="form-control" id="inputPhone" placeholder="">
+                            <input type="tel" class="form-control" id="inputPhone" name="telNo" placeholder="" value="@ViewBag.TelNo">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputTheme">邮箱</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="">
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="" value="@ViewBag.Email">
                 </div>
 
                 <div class="form-group">
                     <label for="inputContent">正文</label>
-                    <textarea class="form-control" id="inputContent" rows="6"></textarea>
+                    <textarea class="form-control" id="inputContent" name="content" rows="6" value="@ViewBag.Content"></textarea>
                 </div>
 
                 <p class="company-phone">公司电话：400-0002-229</p>
@@ -51,5 +51,10 @@
             </form>
         </div>
     </div>
+    <script type="text/javascript">
+        var msg = "@ViewBag.Msg";
+        if (msg != "")
+            alert(msg);
 
+    </script>
 </div>

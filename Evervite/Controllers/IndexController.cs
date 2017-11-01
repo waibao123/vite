@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BizLayer;
 using EntityLayer.Enums;
 using EntityLayer.DbEntity;
+using Framework;
 
 namespace Evervite.Controllers
 {
@@ -87,8 +88,32 @@ namespace Evervite.Controllers
             return View();
         }
 
-        public ActionResult ContractUs()
+        public ActionResult ContractUs(string loadCnt, string title, string name, string email, string telNo, string content)
         {
+            ViewBag.Cnt = "F";
+            if (string.IsNullOrWhiteSpace(loadCnt))
+                return View();
+
+            string msg = null;
+            bool suc = false;
+            if (FormatTools.IsAnyNullOrWhiteSpace(title, name, email, telNo, content))
+                msg = "请完整填写信息后再进行提交";
+            else
+            {
+                if (suc = EmailHelper.SendEmail(title, name, email, telNo, content))
+                    msg = "提交成功，我们将尽快与您联系";
+                else
+                    msg = "提交失败，请稍后重试";
+            }
+            if (!suc)
+            {
+                ViewBag.Title = title;
+                ViewBag.Name = name;
+                ViewBag.Email = email;
+                ViewBag.TelNo = telNo;
+                ViewBag.Content = content;
+            }
+            ViewBag.Msg = msg;
             return View();
         }
 

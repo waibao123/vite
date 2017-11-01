@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BizAccess.cs" />
     <Compile Include="BllTest.cs" />
+    <Compile Include="EmailHelper.cs" />
     <Compile Include="ImageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
