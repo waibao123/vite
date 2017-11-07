@@ -210,3 +210,18 @@ li.dropdown:hover .dropdown-menu {
     font-size: 16px;
 }
 
+
+
+
+.aitisha .product-category-wrapper h3 {
+    color: #75bb29;
+}
+
+.aitisha .product-category-wrapper h3:after, 
+.aitisha .product-category-wrapper h3:before {
+    background: #75bb29;
+}
+
+.aitisha .about-us h3 {
+    color: #75bb29;
+}

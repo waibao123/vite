@@ -39,7 +39,7 @@ ul, menu {
 
 body a {
     text-decoration: none;
-    color: #000;
+    color: #999;
     outline: none;
 }
 
@@ -318,6 +318,7 @@ a:hover {
 .navbar-nav > li > a {
     line-height: 32px;
     color: #999999;
+    font-size: 16px;
 }
 
 .navbar-nav > li {
