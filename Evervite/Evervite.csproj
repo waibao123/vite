@@ -141,6 +141,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\banner\aoleweita-banner-1.jpg" />
+    <Content Include="Content\banner\aoleweita-banner-2.jpg" />
+    <Content Include="Content\banner\aoleweita-banner-3.jpg" />
+    <Content Include="Content\banner\aoleweita-banner-4.jpg" />
     <Content Include="Content\css\app.css" />
     <Content Include="Content\css\brandStory.css" />
     <Content Include="Content\css\contractUs.css" />
