@@ -24,7 +24,15 @@
         $(e.currentTarget).removeClass("btn-default").addClass("btn-primary");
     });
 
+    var video1 = document.getElementById("aoleweitaPlay1");
 
+    video1.onclick = function () {
+        if (video1.paused) {
+            video1.play();
+        } else {
+            video1.pause();
+        }
+    }
 
 
 });

@@ -161,11 +161,12 @@ li.dropdown:hover .dropdown-menu {
 
 .about-us {
     margin-top: 100px;
+    text-align:center;
 }
 
 .about-us img {
     height: 226px;
-    width: 100%;
+    width: auto;
 }
 
 

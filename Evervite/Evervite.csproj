@@ -157,7 +157,14 @@
     <Content Include="Content\css\productDetail.css" />
     <Content Include="Content\css\productList.css" />
     <Content Include="Content\css\search.css" />
+    <Content Include="Content\images\aitisha_logo.png" />
     <Content Include="Content\images\aoleru_logo.png" />
+    <Content Include="Content\images\aoleweita_cover.jpg" />
+    <Content Include="Content\images\aoleweita_logo.png" />
+    <Content Include="Content\images\brand_event.jpg" />
+    <Content Include="Content\images\produce_control.jpg" />
+    <Content Include="Content\images\product_series.jpg" />
+    <Content Include="Content\images\weibo_active.png" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
     <Content Include="Content\ProductImage\DefaultImage.jpg" />
