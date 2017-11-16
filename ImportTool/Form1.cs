@@ -42,7 +42,7 @@ namespace ImportTool
 
         string GetCellText(Worksheet ws, int row, char col)
         {
-            return ((Range)ws.Cells[row, GetColIndex(col)]).Text.ToString().Trim('\n');
+            return ((Range)ws.Cells[row, GetColIndex(col)]).Text.ToString().Trim().Trim('\n');
 
         }
 

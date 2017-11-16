@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.DbEntity
 {
-    [Table("Product", ColModeEnum.PointedFirst)]
+    [Table("Product", ColModeEnum.PointedOnly)]
     public class Product
     {
         [Col("Id", ColType.PK_AI)]
