@@ -25,14 +25,28 @@
     });
 
     var video1 = document.getElementById("aoleweitaPlay1");
+    var video2 = document.getElementById("aoleruPlay1");
 
-    video1.onclick = function () {
-        if (video1.paused) {
-            video1.play();
-        } else {
-            video1.pause();
+    if (video1) {
+        video1.onclick = function () {
+            if (video1.paused) {
+                video1.play();
+            } else {
+                video1.pause();
+            }
         }
     }
+
+    if (video2) {
+        video2.onclick = function () {
+            if (video2.paused) {
+                video2.play();
+            } else {
+                video2.pause();
+            }
+        }
+    }
+    
 
 
 });

@@ -14,18 +14,14 @@
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="http://test.cfxixi.com/Enerviteweb2/resources/images/Milk-Baby-Banner.jpg" alt="First slide">
+            <img src="~/Content/banner/aoleru-banner-1.jpg" alt="First slide">
         </div>
         <div class="item">
-            <img src="http://test.cfxixi.com/Enerviteweb2/resources/images/Milk-Baby-Banner.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-            <img src="http://test.cfxixi.com/Enerviteweb2/resources/images/Milk-Baby-Banner.jpg" alt="Third slide">
+            <img src="~/Content/banner/aoleru-banner-2.jpg" alt="Second slide">
         </div>
     </div>
 
@@ -64,24 +60,12 @@
 
         <div class="row company-introduce-wrapper">
             <div class="col-sm-7 center-block company-introduce">
-                <p>
-                    澳乐维他（上海）健康科技有限公司是澳大利亚独资的进出口贸易和品牌销售公司，目前的主营业务是进口澳大利亚“Health Spring （Australia）Pty Ltd”旗下的三大品牌Enervite，NTSA和OZ Good Dairy产品到大中华区，并进行推广和销售。
-                </p>
-                <p>
-                    EnerVite（澳乐维他）品牌1983年成立于澳大利亚的悉尼，是澳洲草本植物类营养食品的开创者。EnerVite一直秉承“Spring into Health”的承诺，提供一系列天然草本植物、海洋生物、蜂产品、维生素和矿物质类营养食品。
-                </p>
-                <p>
-                    OZ Good Dairy（奶粉）品牌专注于牛奶粉和羊奶粉的研发及生产。全部鲜牛奶和鲜羊奶来自澳洲Gippsland Farm牧场，该牧场坐落于南北纬37度，是世界三大“黄金牧场” 之一。
-                </p>
-                <p>
-                    NTSA（艾缇莎）品牌专注于自然科学疗法，以澳洲顶尖的生物技术为后盾，不仅提供日常的健康护理，还注重于新陈代谢、身体运动机能、关节保护、生殖健康、肠道调理、健康瘦身等产品的研发生产，为全球人类提供优质的健康生活品质。
-                </p>
-                <p>
-                    品质与功效成就了Enervite和OZ Good Dairy，也即将成就澳乐维他（上海）健康科技有限公司。
-                </p>
+                <p>澳乐乳Oz Good Dairy奶粉所采用的鲜奶，来自于澳洲Gippsland 吉普斯兰牧场。牧场坐落于南纬38度的黄金奶源地，是世界三大“黄金牧场” 之一，有着8亩地养1头牛的广阔空旷。清澈而纯净的雪河之水滋养着这片肥沃的黑土地，生长出优质的天然牧草，营养丰富、鲜嫩多汁。温和湿润的气候，与天际相连的草原，让这里成为牛羊的天堂，为澳乐乳提供了最优质的奶源。</p>
+                <p>成群的牛羊悠闲自在地休憩、吃草，散落在青翠的牧场上。牧民们采取自然放养， 顺应牛羊习性，让大自然发挥力量，让人与动物和谐相处，对自然的给予与索取得以完美平衡。通过自动化的挤奶设备和密封冷藏设施，源源不断地获得新鲜0污染的鲜奶。</p>
+                <p>除了拥有世界一流的奶源，澳乐乳还有产品生产的品质保障。澳乐乳奶粉由澳大利亚四大制药企业之一的FPA澳药集团生产，严格监管每个环节，采用TGA指导下的GMP标准，并通过了HACCP，DAIRY LICENCE(AQIS) FOOD AUTHORITY 和 FSANZ认证，全面实现“Spring into Health”的承诺，进入到澳洲万千家庭生活的每一天。</p>
             </div>
             <div class="col-sm-5 center-block text-center">
-                <video width="100%" height="100%" poster="~/Content/images/video-cover.jpg" controls="">
+                <video id="aoleruPlay1" width="100%" height="100%" poster="~/Content/images/aoleru_cover.png" controls="">
                     <source src="http://test.cfxixi.com/Enerviteweb2/movie.mp4" type="video/mp4">
                     <object data="http://test.cfxixi.com/Enerviteweb2/movie.mp4" width="100%" height="100%"></object>
                     Your browser does not support the video tag.
@@ -123,27 +107,33 @@
 
         <div class="row about-us">
             <div class="col-sm-4">
-                <img src="http://test.cfxixi.com/Enerviteweb3/resources/images/51.jpg" />
-                <div>
-                    <h3>澳洲的哈药六厂</h3>
-                    <p>产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介</p>
-                </div>
+                <a href="/Product/List?ws=2">
+                    <img src="~/Content/images/aoleru_product_series.jpg" />
+                    <div>
+                        <h3>产品系列</h3>
+                        <p>纯净的奶源、先进的现代化生产设备和严格的监管，打造了澳乐乳卓越的品质与功效。目前澳乐乳开发了婴幼儿奶粉、成人牛奶粉和羊奶粉、高钙奶粉、孕妇奶粉等多种产品，为我们提供每天必须的钙质，维生素与营养素，呵护家人的健康。</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-sm-4">
-                <img src="http://test.cfxixi.com/Enerviteweb3/resources/images/52.jpg" />
-                <div>
-                    <h3>澳洲的哈药六厂</h3>
-                    <p>产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介</p>
-                </div>
+                <a href="http://www.enervite.com.au/">
+                    <img src="~/Content/images/aoleru_brand_event.jpg" />
+                    <div>
+                        <h3>品牌事件</h3>
+                        <p>澳乐乳始终严格遵循HACCP标准和FSANZ（澳大利亚新西兰食品标准），为全世界婴儿和成人生产纯净的奶粉和其他相关奶制品。</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-sm-4">
-                <img src="http://test.cfxixi.com/Enerviteweb3/resources/images/51.jpg" />
-                <div>
-                    <h3>澳洲的哈药六厂</h3>
-                    <p>产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介</p>
-                </div>
+                <a href="/Index/ProductionMonitor">
+                    <img src="~/Content/images/produce_control.jpg" />
+                    <div>
+                        <h3>生产质控</h3>
+                        <p>澳乐乳（OZ Good Dairy）所采用的鲜奶，来自于澳洲Gippsland 吉普斯兰牧场。由澳洲知名生产商FPA生产，健康、安全、权威、可靠是我们对品质的追求。</p>
+                    </div>
+                </a>
             </div>
         </div>
 
