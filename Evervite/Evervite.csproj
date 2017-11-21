@@ -171,6 +171,7 @@
     <Content Include="Content\images\aoleweita_cover.jpg" />
     <Content Include="Content\images\aoleweita_logo.png" />
     <Content Include="Content\images\brand_event.jpg" />
+    <Content Include="Content\images\ercode-weibo.png" />
     <Content Include="Content\images\produce_control.jpg" />
     <Content Include="Content\images\product_series.jpg" />
     <Content Include="Content\images\weibo_active.png" />
