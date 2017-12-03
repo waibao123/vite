@@ -171,9 +171,12 @@
     <Content Include="Content\images\aoleweita_cover.jpg" />
     <Content Include="Content\images\aoleweita_logo.png" />
     <Content Include="Content\images\brand_event.jpg" />
+    <Content Include="Content\images\employee_all.jpg" />
     <Content Include="Content\images\ercode-weibo.png" />
+    <Content Include="Content\images\exhibition.jpg" />
     <Content Include="Content\images\produce_control.jpg" />
     <Content Include="Content\images\product_series.jpg" />
+    <Content Include="Content\images\star_attend.jpg" />
     <Content Include="Content\images\weibo_active.png" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
@@ -321,6 +324,10 @@
     <Content Include="Views\Index\MainBrandStory.cshtml" />
     <Content Include="Views\Index\ProductionMonitor.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Index\Advantage.cshtml" />
+    <Content Include="Views\Index\CompanyIntroduce.cshtml" />
+    <Content Include="Views\Index\GroupIntroduce.cshtml" />
+    <Content Include="Views\Index\ProduceControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
