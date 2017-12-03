@@ -60,10 +60,12 @@
                         </li>
                     }
                 }
-
-
-
             </ul>
         </div>
     </div>
+    <!--赋值不进去？-->
+    <input type="hidden" id="hdWebId" value="@ViewBag.WebsiteId">
+    <script type="text/javascript">
+        $("#hdLogo").val("imgLogo" + $("#hdWebId").val());
+    </script>
 </div>
