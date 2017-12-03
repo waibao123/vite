@@ -64,6 +64,11 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult Advantage()
+        {
+            return View();
+        }
+
         public ActionResult MainMilkSite()
         {
             int webId = (int)WebsiteEnum.OZ;
@@ -149,6 +154,23 @@ namespace Evervite.Controllers
         }
 
         public ActionResult MainHealthHeader()
+        {
+            return PartialView();
+        }
+
+        public ActionResult GroupIntroduce()
+        {
+            return PartialView();
+        }
+
+
+        public ActionResult ProduceControl()
+        {
+            return PartialView();
+        }
+
+
+        public ActionResult CompanyIntroduce()
         {
             return PartialView();
         }
