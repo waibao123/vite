@@ -17,29 +17,20 @@
 
                     <ul>
 
-                        <li class="snap-list-outer">
-                            <div class="snap-list-inner">
-                                <a href="javascript:void(0);">
-                                    <img class="recommend-product" src="http://www.enervite.com.cn/wp-content/uploads/2016/02/biolax-jd-top-1.jpg">
-                                    <div>
-                                        <h3>澳洲的哈药六厂</h3>
-                                        <p>产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="snap-list-outer">
-                            <div class="snap-list-inner">
-                                <a href="javascript:void(0);">
-                                    <img class="recommend-product" src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg">
-                                    <div>
-                                        <h3>澳洲的哈药六厂</h3>
-                                        <p>产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介产品简介</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
+                        @foreach (var p in ViewBag.RecommandList)
+                        {
+                            <li class="snap-list-outer">
+                                <div class="snap-list-inner">
+                                    <a target="_blank" href="/Product/Detail?ws=@ViewBag.Website&id=@p.Id">
+                                        <img class="recommend-product" src="~/Content/ProductImage/@p.GalleryImages[0]">
+                                        <div>
+                                            <h3>@p.Name</h3>
+                                            <p>@p.Title</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        }
 
                     </ul>
 
@@ -51,87 +42,31 @@
 
             <ol class="breadcrumb">
                 <li><a href="javascript:void(0);">首页</a></li>
-                <li><a href="javascript:void(0);">所有结果</a></li>
-                <li><a href="javascript:void(0);">胶囊</a></li>
+                <li><a href="javascript:void(0);">搜索结果</a></li>
                 <li class="search-outer-wrapper">
                     <div class="search-outer">
                         <div class="row text-center">
-
                             <form class="search-wrapper" method="get" action="/Product/Search">
                                 <input name="kw" type="text" class="form-control" placeholder="请输入您要搜索的商品">
+                                <input name="ws" type="text" value="@ViewBag.Website" hidden="hidden">
                                 <input type="submit" value="" class="search-btn">
                             </form>
-                        
                         </div>
                     </div>
                 </li>
             </ol>
 
             <ul class="product-list-content">
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
-
-                <li>
-                    <img src="http://www.enervite.com.cn/wp-content/uploads/2016/02/kidsgoatsmilk-jd-top-3.jpg" />
-                    <p class="product-name">树莓酮</p>
-                </li>
+                @ViewBag.Msg
+                @foreach (var p in ViewBag.ProductList)
+                {
+                    <li>
+                        <a target="_blank" href="/Product/Detail?ws=@ViewBag.Website&id=@p.Id">
+                            <img src="~/Content/ProductImage/@p.GalleryImages[0]" />
+                            <p class="product-name">@p.Name</p>
+                        </a>
+                    </li>
+                }
 
 
             </ul>
@@ -144,3 +79,6 @@
 
 
 </div>
+<script type="text/javascript">
+    $("#hdLogo").val("imgLogo" + @ViewBag.Website);
+</script>
