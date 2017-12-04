@@ -1,12 +1,19 @@
 ﻿@{
     ViewBag.Title = "澳乐维他";
-    Layout = "~/Views/Shared/MainSiteLayout.cshtml";
+    Layout = "~/Views/Shared/DetailLayout.cshtml";
     @Styles.Render("~/Content/css/productDetail.css");
     @Styles.Render("~/Content/css/owl.carousel.css");
     @Styles.Render("~/Content/css/owl.theme.css");
 
     <script src="~/Content/js/productDetail.js"></script>
 }
+
+@*@Html.Action("MainBrandHeader", "Index")*@
+
+@*@Html.Action("MainHealthHeader", "Index")*@
+
+@Html.Action("MainMilkHeader", "Index")
+
 
 <div class="container">
 

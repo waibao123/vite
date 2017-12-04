@@ -328,6 +328,7 @@
     <Content Include="Views\Index\CompanyIntroduce.cshtml" />
     <Content Include="Views\Index\GroupIntroduce.cshtml" />
     <Content Include="Views\Index\ProduceControl.cshtml" />
+    <Content Include="Views\Shared\DetailLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
