@@ -8,12 +8,12 @@
     <script src="~/Content/js/productDetail.js"></script>
 }
 
-@*@Html.Action("MainBrandHeader", "Index")*@
-
-@*@Html.Action("MainHealthHeader", "Index")*@
-
-@Html.Action("MainMilkHeader", "Index")
-
+@if (ViewBag.Website == 1)
+{ @Html.Action("MainBrandHeader", "Index"); }
+@if (ViewBag.Website == 3)
+{ @Html.Action("MainHealthHeader", "Index"); }
+@if (ViewBag.Website == 2)
+{ @Html.Action("MainMilkHeader", "Index"); }
 
 <div class="container">
 
@@ -101,7 +101,7 @@
                             {
                                 <li class="snap-list-outer">
                                     <div class="snap-list-inner">
-                                        <a target="_blank" href="/Product/Detail?ws=@ViewBag.WebsiteId&id=@p.Id">
+                                        <a target="_blank" href="/Product/Detail?ws=@ViewBag.Website&id=@p.Id">
                                             <img class="recommend-product center-block" src="~/Content/ProductImage/@p.GalleryImages[0]">
                                             <div>
                                                 <h3>@p.Name</h3>
