@@ -69,6 +69,11 @@ namespace Evervite.Controllers
             return View();
         }
 
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
         public ActionResult MainMilkSite()
         {
             int webId = (int)WebsiteEnum.OZ;
@@ -142,7 +147,6 @@ namespace Evervite.Controllers
             return PartialView();
         }
 
-
         public ActionResult MainHeader()
         {
             return PartialView();
@@ -163,12 +167,25 @@ namespace Evervite.Controllers
             return PartialView();
         }
 
-
         public ActionResult ProduceControl()
         {
             return PartialView();
         }
 
+        public ActionResult Recruit()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Job()
+        {
+            return PartialView();
+        }
+
+        public ActionResult FindUs()
+        {
+            return PartialView();
+        }
 
         public ActionResult CompanyIntroduce()
         {
@@ -189,14 +206,12 @@ namespace Evervite.Controllers
         {
             return View();
         }
-
-
+        
         public ActionResult MainBrandStory()
         {
             return View();
         }
-
-
+        
         public ActionResult ProductionMonitor()
         {
             return View();

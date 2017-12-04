@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+    @Styles.Render("~/Content/css/contractUs.css");
+}
+
+<div>
+
+    <h3 class="text-center">联系我们</h3>
+
+    <div class="company-introduce-wrapper" style="margin-top:55px;">
+
+        <div class="content-inner">
+            <div class="form-wrapper center-block" style="padding-top:0">
+                <form>
+                    <input type="hidden" name="loadCnt" value="" />
+                    <div class="form-group">
+                        <label for="inputTheme">主题</label>
+                        <input type="text" class="form-control" id="inputTheme" name="title" placeholder="" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="inputTheme">姓名</label>
+                                <input type="text" class="form-control" id="inputName" name="name" placeholder="" value="">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="inputTheme">手机</label>
+                                <input type="tel" class="form-control" id="inputPhone" name="telNo" placeholder="" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputTheme">邮箱</label>
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputContent">正文</label>
+                        <textarea class="form-control" id="inputContent" name="content" rows="6" value=""></textarea>
+                    </div>
+
+                    <p class="company-phone">公司电话：400-0002-229</p>
+
+                    <div class="text-center submit-btn-wrapper">
+                        <button type="submit" class="btn btn-default">立即发送</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
