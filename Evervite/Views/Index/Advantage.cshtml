@@ -35,16 +35,16 @@
                         </div>
 
                         @*<div id="menu-item-1" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul class="child-menu-item">
-                                    <li>交易条款</li>
-                                    <li>购物流程</li>
-                                    <li>促销咨询</li>
-                                    <li>商品咨询</li>
-                                    <li>生活旅行</li>
-                                </ul>
-                            </div>
-                        </div>*@
+                                <div class="panel-body">
+                                    <ul class="child-menu-item">
+                                        <li>交易条款</li>
+                                        <li>购物流程</li>
+                                        <li>促销咨询</li>
+                                        <li>商品咨询</li>
+                                        <li>生活旅行</li>
+                                    </ul>
+                                </div>
+                            </div>*@
 
                     </div>
 
@@ -61,16 +61,16 @@
                         </div>
 
                         @*<div id="menu-item-2" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul class="child-menu-item">
-                                    <li>交易条款</li>
-                                    <li>购物流程</li>
-                                    <li>促销咨询</li>
-                                    <li>商品咨询</li>
-                                    <li>生活旅行</li>
-                                </ul>
-                            </div>
-                        </div>*@
+                                <div class="panel-body">
+                                    <ul class="child-menu-item">
+                                        <li>交易条款</li>
+                                        <li>购物流程</li>
+                                        <li>促销咨询</li>
+                                        <li>商品咨询</li>
+                                        <li>生活旅行</li>
+                                    </ul>
+                                </div>
+                            </div>*@
 
                     </div>
 
@@ -87,16 +87,16 @@
                         </div>
 
                         @*<div id="menu-item-3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul class="child-menu-item">
-                                    <li>交易条款</li>
-                                    <li>购物流程</li>
-                                    <li>促销咨询</li>
-                                    <li>商品咨询</li>
-                                    <li>生活旅行</li>
-                                </ul>
-                            </div>
-                        </div>*@
+                                <div class="panel-body">
+                                    <ul class="child-menu-item">
+                                        <li>交易条款</li>
+                                        <li>购物流程</li>
+                                        <li>促销咨询</li>
+                                        <li>商品咨询</li>
+                                        <li>生活旅行</li>
+                                    </ul>
+                                </div>
+                            </div>*@
 
                     </div>
 
@@ -108,12 +108,14 @@
             <div class="col-sm-9">
 
                 <div id="companyIntroduce">
+                    @if (ViewBag.PageType == 0)
+                    {@Html.Action("CompanyIntroduce", "Index")}
 
-                    @*@Html.Action("CompanyIntroduce", "Index")*@
-                    
-                    @*@Html.Action("GroupIntroduce", "Index")*@
+                    @if (ViewBag.PageType == 1)
+                    {@Html.Action("GroupIntroduce", "Index")}
 
-                    @Html.Action("ProduceControl", "Index");
+                    @if (ViewBag.PageType == 2)
+                    { @Html.Action("ProduceControl", "Index")}
 
                 </div>
 

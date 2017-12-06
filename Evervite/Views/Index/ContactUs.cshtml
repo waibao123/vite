@@ -73,11 +73,14 @@
 
                 <div id="companyIntroduce">
 
-                    @*@Html.Action("Recruit", "Index");*@
+                    @if (ViewBag.PageType == 0)
+                    {@Html.Action("Recruit", "Index")}
 
-                    @*@Html.Action("Job", "Index");*@
+                    @if (ViewBag.PageType == 1)
+                    {@Html.Action("Job", "Index")}
 
-                    @Html.Action("FindUs", "Index");
+                    @if (ViewBag.PageType == 2)
+                    { @Html.Action("FindUs", "Index")}
 
                 </div>
 

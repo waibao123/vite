@@ -64,13 +64,15 @@ namespace Evervite.Controllers
             return View();
         }
 
-        public ActionResult Advantage()
+        public ActionResult Advantage(string p)
         {
+            ViewBag.PageType = FormatTools.ParseInt(p);
             return View();
         }
 
-        public ActionResult ContactUs()
+        public ActionResult ContactUs(string p)
         {
+            ViewBag.PageType = FormatTools.ParseInt(p);
             return View();
         }
 
