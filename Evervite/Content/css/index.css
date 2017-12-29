@@ -111,6 +111,11 @@ li.dropdown:hover .dropdown-menu {
     border-radius: 100px;
 }
 
+.shortcut-button-list .btn:hover {
+    background: #004a9f;
+    color:#fff;
+}
+
 .shortcut-button-list .btn-primary {
     background: #004a9f;
     border: none;
@@ -120,11 +125,13 @@ li.dropdown:hover .dropdown-menu {
     background: #FFFFFF;
 }
 
+.company-introduce {
+    line-height:30px;
+}
 
 .company-introduce-wrapper {
     margin-top: 100px;
 }
-
 
 .company-introduce p {
     color: #999999;
@@ -146,6 +153,7 @@ li.dropdown:hover .dropdown-menu {
 .recommend-list .snap-list-inner {
     margin-right: 10px;
     margin-left: 10px;
+    text-align: center;
 }
 
 .recommend-list img {
@@ -179,7 +187,7 @@ li.dropdown:hover .dropdown-menu {
 .owl-prev {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: -20px;
     transform: translateY(-45px);
     background: #8edcf5 !important;
     width: 45px;
@@ -192,7 +200,7 @@ li.dropdown:hover .dropdown-menu {
 .owl-next {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: -20px;
     transform: translateY(-45px);
     background: #7fa4cf !important;
     width: 45px;
