@@ -31,6 +31,12 @@ namespace EntityLayer.DbEntity
         [Col("IsRecommand")]
         public int? IsRecommand { get; set; }
 
+        [Col("WebsiteId")]
+        public int WebsiteId { get; set; }
+
+        [Col("IsStar")]
+        public int? IsStar { get; set; }
+
         public List<string> GalleryImages { get; set; }
 
         public List<string> ContentImages { get; set; }

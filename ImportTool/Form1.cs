@@ -56,20 +56,21 @@ namespace ImportTool
             for (int i = 3; i <= rowMax; i++)
             {
                 Product p = new Product();
-                p.Name = GetCellText(ws, i, ('B'));
-                p.Title = GetCellText(ws, i, ('I'));
-                p.SubTitle = GetCellText(ws, i, ('J'));
+                p.WebsiteId = websiteId;
+                p.Name = GetCellText(ws, i, ('B')).Replace("(", "（").Replace(")", "）");
+                p.PurchaseUrl = GetCellText(ws, i, ('D'));
+                p.Title = GetCellText(ws, i, ('E'));
+                p.SubTitle = GetCellText(ws, i, ('F'));
                 if (p.SubTitle == "无")
                     p.SubTitle = string.Empty;
                 p.Price = 1234;
-                p.PurchaseUrl = GetCellText(ws, i, ('H'));
                 if (GetCellText(ws, i, ('A')) == "X")
                     p.IsRecommand = websiteId;
                 if (FormatTools.IsAnyNullOrWhiteSpace(p.Name, p.Title))
                     break;
                 p = CreateProduct(p);
 
-                string[] categoryNames = ((Range)ws.Cells[i, GetColIndex('E')]).Text.ToString().Trim('\n').Split('/');
+                string[] categoryNames = ((Range)ws.Cells[i, GetColIndex('C')]).Text.ToString().Trim('\n').Split('/');
                 foreach (string name in categoryNames)
                 {
                     if (string.IsNullOrWhiteSpace(name))
@@ -79,13 +80,15 @@ namespace ImportTool
                     DalFactory.ImportDal.ExecuteNonQuery(sql);
                 }
 
-                if (string.IsNullOrWhiteSpace(p.PurchaseUrl))
+                if (string.IsNullOrWhiteSpace(p.PurchaseUrl) || !p.PurchaseUrl.StartsWith("http"))
                     continue;
                 //string sqlDelAttrMapping = "DELETE FROM productattrmapping WHERE ProductId=" + p.Id;
                 Dictionary<string, string> kvps = GetAttrsFromJD(p.PurchaseUrl);
                 int idx = 1;
                 foreach (var kvp in kvps)
                 {
+                    if (kvp.Key.Contains("蓝帽"))
+                        continue;
                     ProductAttrMapping pam = new ProductAttrMapping();
                     pam.ProductId = p.Id;
                     pam.AttrId = GetAttrId(kvp.Key);

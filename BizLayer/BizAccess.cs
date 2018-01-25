@@ -47,5 +47,11 @@ namespace BizLayer
         {
             return DalFactory.BizAccessDal.GetRecommandProduct(websiteId);
         }
+
+        public static List<Product> GetStarProduct(int websiteId)
+        {
+            return DalFactory.BizAccessDal.GetStarProduct(websiteId);
+        }
+
     }
 }

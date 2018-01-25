@@ -25,7 +25,7 @@ namespace Evervite.Controllers
         public ActionResult MainSite()
         {
             int webId = (int)WebsiteEnum.EnerVite;
-            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            List<Product> list = BizAccess.GetStarProduct(webId);
             list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
 
             ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
@@ -79,7 +79,7 @@ namespace Evervite.Controllers
         public ActionResult MainMilkSite()
         {
             int webId = (int)WebsiteEnum.OZ;
-            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            List<Product> list = BizAccess.GetStarProduct(webId);
             list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
 
             ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
@@ -91,7 +91,7 @@ namespace Evervite.Controllers
         public ActionResult MainHealthSite()
         {
             int webId = (int)WebsiteEnum.NTSA;
-            List<Product> list = BizAccess.GetRecommandProduct(webId);
+            List<Product> list = BizAccess.GetStarProduct(webId);
             list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
 
             ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);

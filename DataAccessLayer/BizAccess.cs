@@ -73,5 +73,16 @@ namespace DataAccessLayer
                 sql += " IsRecommand = " + websiteId;
             return GetList<Product>(sql, null);
         }
+
+        public List<Product> GetStarProduct(int websiteId)
+        {
+            string sql = "SELECT * FROM product WHERE";
+            if (websiteId == 0)
+                sql += " IsStar IS NOT NULL";
+            else
+                sql += " IsStar = " + websiteId;
+            return GetList<Product>(sql, null);
+        }
+
     }
 }
