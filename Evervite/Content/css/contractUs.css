@@ -2,7 +2,7 @@
 
 .contract-us-wrapper{
     position: relative;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .contract-us-wrapper h3 {
@@ -46,6 +46,7 @@
 
 .content-inner{
     position: relative;
+    margin-top:60px;
 }
 
 
