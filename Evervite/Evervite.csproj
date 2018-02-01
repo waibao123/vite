@@ -170,7 +170,19 @@
     <Content Include="Content\images\aoleru_product_series.jpg" />
     <Content Include="Content\images\aoleweita_cover.jpg" />
     <Content Include="Content\images\aoleweita_logo.png" />
+    <Content Include="Content\images\brand_append_1.jpg" />
+    <Content Include="Content\images\brand_append_2.jpg" />
+    <Content Include="Content\images\brand_append_3.jpg" />
     <Content Include="Content\images\brand_event.jpg" />
+    <Content Include="Content\images\company_append.jpg" />
+    <Content Include="Content\images\culture_1.jpg" />
+    <Content Include="Content\images\culture_2.jpg" />
+    <Content Include="Content\images\culture_3.jpg" />
+    <Content Include="Content\images\culture_4.jpg" />
+    <Content Include="Content\images\culture_5.jpg" />
+    <Content Include="Content\images\culture_6.jpg" />
+    <Content Include="Content\images\culture_7.jpg" />
+    <Content Include="Content\images\culture_8.jpg" />
     <Content Include="Content\images\employee_all.jpg" />
     <Content Include="Content\images\ercode-weibo.png" />
     <Content Include="Content\images\exhibition.jpg" />
@@ -334,6 +346,7 @@
     <Content Include="Views\Index\Recruit.cshtml" />
     <Content Include="Views\Index\Job.cshtml" />
     <Content Include="Views\Index\FindUs.cshtml" />
+    <Content Include="Views\Index\CompanyCultrue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

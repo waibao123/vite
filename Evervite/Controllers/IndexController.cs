@@ -174,6 +174,11 @@ namespace Evervite.Controllers
             return PartialView();
         }
 
+        public ActionResult CompanyCultrue()
+        {
+            return PartialView();
+        }
+
         public ActionResult Recruit()
         {
             return PartialView();
