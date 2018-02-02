@@ -179,6 +179,31 @@ namespace Evervite.Controllers
             return PartialView();
         }
 
+        public ActionResult QualificationCertification()
+        {
+            return PartialView();
+        }
+
+        public ActionResult ProductionQualityControl()
+        {
+            return PartialView();
+        }
+
+        public ActionResult SocialEvents()
+        {
+            return PartialView();
+        }
+
+        public ActionResult InvestmentPromotionAgency()
+        {
+            return PartialView();
+        }
+
+        public ActionResult CompanyNews()
+        {
+            return PartialView();
+        }
+
         public ActionResult Recruit()
         {
             return PartialView();

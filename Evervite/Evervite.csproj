@@ -161,6 +161,7 @@
     <Content Include="Content\css\productDetail.css" />
     <Content Include="Content\css\productList.css" />
     <Content Include="Content\css\search.css" />
+    <Content Include="Content\images\agency.jpg" />
     <Content Include="Content\images\aitisha_brand_event.jpg" />
     <Content Include="Content\images\aitisha_logo.png" />
     <Content Include="Content\images\aitisha_product_series.jpg" />
@@ -186,9 +187,14 @@
     <Content Include="Content\images\employee_all.jpg" />
     <Content Include="Content\images\ercode-weibo.png" />
     <Content Include="Content\images\exhibition.jpg" />
+    <Content Include="Content\images\nomessage.jpg" />
     <Content Include="Content\images\produce_control.jpg" />
+    <Content Include="Content\images\product_control_1.jpg" />
+    <Content Include="Content\images\product_control_2.jpg" />
+    <Content Include="Content\images\product_control_3.jpg" />
     <Content Include="Content\images\product_series.jpg" />
     <Content Include="Content\images\product_video_cover.png" />
+    <Content Include="Content\images\qualifyCert.jpg" />
     <Content Include="Content\images\star_attend.jpg" />
     <Content Include="Content\images\weibo_active.png" />
     <Content Include="Content\js\productDetail.js" />
@@ -347,6 +353,11 @@
     <Content Include="Views\Index\Job.cshtml" />
     <Content Include="Views\Index\FindUs.cshtml" />
     <Content Include="Views\Index\CompanyCultrue.cshtml" />
+    <Content Include="Views\Index\CompanyNews.cshtml" />
+    <Content Include="Views\Index\QualificationCertification.cshtml" />
+    <Content Include="Views\Index\ProductionQualityControl.cshtml" />
+    <Content Include="Views\Index\SocialEvents.cshtml" />
+    <Content Include="Views\Index\InvestmentPromotionAgency.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
