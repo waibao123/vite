@@ -23,10 +23,12 @@
     padding-left: 30px;
 }
 
-.product-type-list li:hover{
-    background: #FFFFFF;
-    border-left: 6px solid #3eca36;
-    color: #3eca36;
+
+.hover_item,
+.product-type-list li:hover {
+    background: #FFFFFF !important;
+    border-left: 6px solid #3eca36 !important;
+    color: #3eca36 !important;
 }
 
 .product-type-list li:last-of-type{
@@ -90,4 +92,8 @@
     text-align: center;
     color: #ff9600;
     margin: 20px 0 20px 0;
+}
+
+.recommend-list{
+    margin-top:20px;
 }

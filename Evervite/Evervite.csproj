@@ -199,8 +199,10 @@
     <Content Include="Content\images\video_enervite_1.jpg" />
     <Content Include="Content\images\video_enervite_2.jpg" />
     <Content Include="Content\images\weibo_active.png" />
+    <Content Include="Content\js\owl.carousel.js" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
+    <Content Include="Content\js\productList.js" />
     <Content Include="Content\ProductImage\DefaultImage.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

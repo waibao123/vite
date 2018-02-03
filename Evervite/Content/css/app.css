@@ -396,6 +396,12 @@ a:hover {
 }
 
 
+.snap-list-inner.no_hover:hover img {
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+}
+
 .snap-list-inner:hover img,
 .product-list-content>li:hover {
     -webkit-transform: scale(1.1, 1.1);

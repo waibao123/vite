@@ -1,7 +1,11 @@
 ﻿@{
     ViewBag.Title = "澳乐维他";
     Layout = "~/Views/Shared/MainSiteLayout.cshtml";
+    @Styles.Render("~/Content/css/owl.carousel.css");
+    @Styles.Render("~/Content/css/owl.theme.css");
     @Styles.Render("~/Content/css/productList.css");
+
+    <script src="~/Content/js/productList.js"></script>
 
 }
 <div class="container">
@@ -11,7 +15,14 @@
             <ul class="product-type-list mt30">
                 @foreach (var pc in ViewBag.ProductCategory)
                 {
-                    <li><a href="List?ws=@ViewBag.Website&ct=@pc.Id">@pc.CategoryName</a></li>
+                    if (ViewBag.CurrentItemIndex == pc.Id)
+                    {
+                        <li class="hover_item"><a href="javascript:void(0);">@pc.CategoryName</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="List?ws=@ViewBag.Website&ct=@pc.Id">@pc.CategoryName</a></li>
+                    }
                 }
             </ul>
 
@@ -21,11 +32,11 @@
 
                     <div class="recommend-list-title">商品推荐</div>
 
-                    <ul>
-                        @foreach (var p in ViewBag.RecommandList)
-                        {
+                    <ul id="product_recommend_list_carousel">
+
+                        @foreach (var p in ViewBag.RecommandList){
                             <li class="snap-list-outer">
-                                <div class="snap-list-inner">
+                                <div class="snap-list-inner no_hover">
                                     <a target="_blank" href="/Product/Detail?ws=@ViewBag.WebsiteId&id=@p.Id">
                                         <img class="recommend-product" src="~/Content/ProductImage/@p.GalleryImages[0]">
                                         <div>

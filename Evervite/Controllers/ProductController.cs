@@ -51,6 +51,9 @@ namespace Evervite.Controllers
                 ViewBag.Website = webId;
                 ViewBag.Category = curCategory;
                 ViewBag.RecommandList = recList;
+
+                //cfxixi code add current choose item
+                ViewBag.CurrentItemIndex = categoryId;
             }
             catch (Exception ex)
             {
