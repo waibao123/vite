@@ -63,8 +63,23 @@
 }
 
 
-.company-introduce p{
+.company-introduce p {
     color: #000000;
     font-size: 16px;
     text-indent: 2em;
+    line-height: 30px;
+}
+
+
+.subtitle {
+    background: rgb(91,155,213);
+    padding: 15px 20px 10px 20px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.mt32{
+    margin-top:32px;
 }

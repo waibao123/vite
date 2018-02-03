@@ -196,6 +196,8 @@
     <Content Include="Content\images\product_video_cover.png" />
     <Content Include="Content\images\qualifyCert.jpg" />
     <Content Include="Content\images\star_attend.jpg" />
+    <Content Include="Content\images\video_enervite_1.jpg" />
+    <Content Include="Content\images\video_enervite_2.jpg" />
     <Content Include="Content\images\weibo_active.png" />
     <Content Include="Content\js\productDetail.js" />
     <Content Include="Content\js\mainSite.js" />
