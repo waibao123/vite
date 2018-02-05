@@ -7,6 +7,7 @@ using BizLayer;
 using EntityLayer.Enums;
 using EntityLayer.DbEntity;
 using Framework;
+using System.Text.RegularExpressions;
 
 namespace Evervite.Controllers
 {
@@ -80,7 +81,9 @@ namespace Evervite.Controllers
         {
             int webId = (int)WebsiteEnum.OZ;
             List<Product> list = BizAccess.GetStarProduct(webId);
+            Regex reg = new Regex("（[\\S]+）");
             list.ForEach(item => item.GalleryImages = ImageHelper.GetPics(Server.MapPath("~/Content/ProductImage"), webId, item.Name, PickPicMode.FirstGallery));
+            list.ForEach(item => item.Name = reg.Replace(item.Name, ""));
 
             ViewBag.CategoryList = BizAccess.GetAllProductCategory(webId);
             ViewBag.ProductList = list;
@@ -262,12 +265,12 @@ namespace Evervite.Controllers
         {
             return View();
         }
-        
+
         public ActionResult MainBrandStory()
         {
             return View();
         }
-        
+
         public ActionResult ProductionMonitor()
         {
             return View();
