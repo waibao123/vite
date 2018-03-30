@@ -349,6 +349,11 @@ a:hover {
 
 
 @media screen and (max-width: 767px) {
+
+    .product-list-content .product-name {
+        font-size: 14px;
+    }
+
     li.dropdown .dropdown-menu {
         display: none !important;
     }
@@ -409,9 +414,17 @@ a:hover {
         width: 100% !important;
     }
 
-    .shortcut-button-list li {
-        display: block !important;
-        margin-bottom:10px;
+    .shortcut-button-list li{
+        margin-left:0 !important;
+    }
+    
+    .shortcut-button-list li a {
+        /*display: block !important;*/
+        margin-bottom: 10px;
+    }
+
+    .snap-list-inner h3{
+        font-size:16px;
     }
 
     .inner-content {
