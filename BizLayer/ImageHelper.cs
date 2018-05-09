@@ -15,6 +15,8 @@ namespace BizLayer
 
         public static List<string> GetPics(string pathBaseDir, int webId, string productName, PickPicMode mode)
         {
+            if (mode == PickPicMode.Content)
+                return new List<string>();
             productName = productName.Replace("+", null);
             List<string> result = new List<string>();
             string pathProduct = string.Format("{0}\\{1}\\{2}", pathBaseDir, webId, productName);
